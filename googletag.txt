@@ -1,6 +1,6 @@
 域名:https://gogle.cas-track.casino/Giftcard/index.html
 
-
+-------------------------------google
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TP2HSWDBF"></script>
 <script>
@@ -12,3 +12,4 @@
 </script>
 
 <!-- Google 标签 (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TP2HSWDBF"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2TP2HSWDBF'); </script>
+-------------------------------
