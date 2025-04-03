@@ -18,7 +18,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 
-
+**************************<!-- 复制本段Before the closing </head> HTML tag执行propush -->
+        <script>
+		var s = document.createElement('script');
+		s.src='//deehalig.net/act/files/micro.tag.min.js?z=5705526'+'&sw=/sw-check-permissions-9098f.js';
+		s.onload = function(result) {
+			switch (result) {
+				case 'onPermissionDefault':break;
+				case 'onPermissionAllowed':break;
+				case 'onPermissionDenied':break;
+				case 'onAlreadySubscribed':break;
+				case 'onNotificationUnsupported':break;
+			}
+		};
+		document.head.appendChild(s);
+	</script>  
 ***********************************
 Email-
 <form action="https://cas-track.online/sendy/subscribe" method="POST" accept-charset="utf-8">

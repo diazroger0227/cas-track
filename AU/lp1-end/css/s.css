@@ -126,7 +126,7 @@ tr {
 .everyday {
     padding: 7px 0;
     width: 100%;
-    background-color: #3b5998
+    background-color: #fafcfe
 }
 
 .roll {
@@ -351,10 +351,10 @@ tr {
     padding: 0 5px 10px
 }
 
-.totlikes {
+/* .totlikes {
     padding: 5px 5px 5px 23px;
     background-image: url(http://fbrewards.com-sna.pw/uk/1/like.png)
-}
+} */
 
 .fbblue {
     color: #3c5a96
@@ -366,10 +366,10 @@ tr {
     color: #7d7d7f
 }
 
-.viewmore {
+/* .viewmore {
     padding: 5px 5px 5px 23px;
     background-image: url(http://fbrewards.com-sna.pw/uk/1/arrow.png)
-}
+} */
 
 .left {
     float: left;
@@ -531,3 +531,4 @@ label[for=email] {
         font-size: 14px;
     }
 }
+

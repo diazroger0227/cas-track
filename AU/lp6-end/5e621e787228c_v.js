@@ -22,7 +22,7 @@ var contactForm = {
 
                 Email.send({
                     SecureToken: "ddaa6158-c224-4bd5-8b43-d65179e23ae4",
-                    To: 'noah@finomedia.de',
+                    To: 'diazroger@cas-track.online',
                     From: self.fieldEmail.val(),
                     Subject: "Email from JackpotNow",
                     Body: message
@@ -232,7 +232,7 @@ var helpers = {
     }
 };
 
-var tracking = {
+/* var tracking = {
     init: function () {
         this.TIMEOUT_IN_SECONDS = 10;
         this.pushAfterTimeout(this.TIMEOUT_IN_SECONDS);
@@ -250,7 +250,7 @@ var tracking = {
     pushAfterSpin: function () {
         this.pushToTrackerViaImage(5);
     }
-};
+}; */
 
 $(function () {
     slots.init();
