@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - Claim Your Free Spins!</title>
+    <style>
+      /* Page background */
+      body {
+        background: linear-gradient(45deg, #ff6f61, #ffc107, #4caf50, #3f51b5);
+        background-size: 400% 400%;
+        animation: gradientBackground 10s ease infinite;
+        font-family: 'Arial', sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        overflow: hidden; /* Prevents scrollbars from appearing */
+      }
+
+      /* Main container */
+      .container {
+        text-align: center;
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.5);
+        max-width: 450px;
+        width: 100%;
+        position: relative;
+      }
+
+      /* Title */
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      /* Information text */
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      /* Button style */
+      #button {
+        background-color: #ff4081;
+        border: none;
+        color: white;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        border-radius: 25px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+
+      #button:hover {
+        transform: scale(1.1);
+        background-color: #f50057;
+      }
+
+      #button:active {
+        transform: scale(1.05);
+        background-color: #c51162;
+      }
+
+      /* Animation for background */
+      @keyframes gradientBackground {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Animation for falling coins */
+      @keyframes fallCoin {
+        0% {
+          transform: translateY(-100px) rotate(0deg);
+        }
+        100% {
+          transform: translateY(100vh) rotate(360deg);
+        }
+      }
+
+      /* Coin style */
+      .coin {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: gold;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        animation: fallCoin 3s infinite;
+        animation-timing-function: ease-in;
+      }
+
+      /* Add different timings and delays for each coin */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Congratulations! You're In!</h1>
+      <p>Check your inbox for a confirmation email. But wait... there's more!</p>
+      <p>Get your chance to win big with free spins! Click the button below to claim your reward.</p>
+      <div class="button-container">
+        <button id="button">Claim Your Free Spins!</button>
+      </div>
+    </div>
+
+    <!-- Coins container -->
+    <div id="coins"></div>
+
+    <script>
+      // Function to create falling coins
+      function createCoin() {
+        const coin = document.createElement('div');
+        coin.classList.add('coin');
+
+        // Randomize the horizontal position
+        const leftPosition = Math.random() * 100;
+        coin.style.left = `${leftPosition}vw`;
+
+        // Randomize the animation duration (falling speed)
+        const animationDuration = Math.random() * 2 + 3; // Between 3 and 5 seconds
+        coin.style.animationDuration = `${animationDuration}s`;
+
+        document.getElementById('coins').appendChild(coin);
+
+        // Remove the coin after it falls
+        setTimeout(() => {
+          coin.remove();
+        }, animationDuration * 1000); // After the animation duration
+      }
+
+      // Create coins at intervals
+      setInterval(createCoin, 500); // Create a coin every 500ms
+
+      // Button click to claim free spins
+      document.querySelector('#button').addEventListener('click', () => {
+        window.location.replace(`https://innovate-niche.com/chv3l3k.php?key=ybzoy66mivk27imho24y&c1={type}&c2={geo}`);
+      });
+    </script>
+  </body>
+</html>
