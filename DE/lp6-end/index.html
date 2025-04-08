@@ -2615,7 +2615,45 @@
                 </div>
             </div>
 
+<div class="bonus-timer" style="
+  text-align:center;
+  font-size: 1.1em;
+  color: #ff3b3b;
+  font-weight: bold;
+  margin: 12px auto;
+  animation: pulse 1s infinite;
+">
+  ⏳ Nur noch <span id="countdown">05:00</span> Minuten – Danach ist der Bonus weg!
+</div>
 
+<style>
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+</style>
+<script>
+    function startCountdown(duration, display) {
+        let timer = duration, minutes, seconds;
+        const interval = setInterval(function () {
+            minutes = String(parseInt(timer / 60)).padStart(2, '0');
+            seconds = String(parseInt(timer % 60)).padStart(2, '0');
+            display.textContent = `${minutes}:${seconds}`;
+            if (--timer < 0) {
+                clearInterval(interval);
+                display.textContent = "00:00";
+            }
+        }, 1000);
+    }
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        const countdownEl = document.getElementById("countdown");
+        if (countdownEl) {
+            startCountdown(5 * 60, countdownEl); // 5分钟
+        }
+    });
+    </script>
             <div id="form-section" style="padding: 20px 15px;">
                 <form id="bonus-form" action="https://cas-track.online/sendy/subscribe" method="POST" target="_self"
                     accept-charset="utf-8" style="max-width: 400px; margin: 0 auto; text-align: center;">
