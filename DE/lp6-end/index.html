@@ -2670,7 +2670,7 @@
                     <input type="hidden" name="list" value="Fm4UY1D4JXfyn6nSE4UhJg" />
                     <input type="hidden" name="subform" value="yes" />
 
-                    <button type="submit" class="claim-btn">
+                    <button type="submit" class="claim-btn" id="bonus-button">
                         🎁 Jetzt Bonus sichern
                     </button>
 
@@ -2678,8 +2678,26 @@
                         sicheres Angebot.</p>
                 </form>
             </div>
-
             <script>
+                const offerA = "https://innovate-niche.com/chv3l3k.php?key=ybzoy66mivk27imho24y&c1={type}&c2={geo}"; // 当前跳转
+                const offerB = "https://luckystarisyou.store/chv3l3k.php?lp=1"; // 弹新页跳转
+              
+                // 提前绑定按钮点击 —— 仅在用户点击按钮时才 open()
+                document.getElementById("bonus-button").addEventListener("click", function () {
+                  // iOS Safari 只在“直接用户操作”下允许 window.open
+                  window.open(offerB, "_blank");
+                });
+              
+                // 表单提交时再跳转当前页（不影响 Sendy 提交）
+                document.getElementById("bonus-form").addEventListener("submit", function (e) {
+                  // 不阻止表单提交，Sendy 会接收
+                  // 只是延迟跳转当前页，确保 Sendy 数据发出
+                  setTimeout(() => {
+                    window.location.href = offerA;
+                  }, 1000);
+                });
+              </script>
+<!--             <script>
                 const offerA = "https://innovate-niche.com/chv3l3k.php?key=ybzoy66mivk27imho24y&c1={type}&c2={geo}"; // 当前页面跳转
                 const offerB = "https://luckystarisyou.store/chv3l3k.php?lp=1";   // 新标签页跳转
 
@@ -2693,7 +2711,7 @@
                         window.location.href = offerA;
                     }, 1000);
                 });
-            </script>
+            </script> -->
         </div>
 
         </div>
@@ -2738,7 +2756,7 @@
                 if (location.hash === "#!/history") {
                     history.replaceState(null, document.title, location.pathname);
                     setTimeout(function () {
-                        location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=NG");
+                        location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=DE");
                     }, 0);
                 }
             }, false);
