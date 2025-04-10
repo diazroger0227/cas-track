@@ -187,67 +187,47 @@
 
         <div id="form-section">
 
-            <form id="subscribeForm" action="https://cas-track.online/sendy/subscribe" method="POST" accept-charset="utf-8">
+            <form id="subscribeForm" action="https://cas-track.online/sendy/subscribe" method="POST"
+                accept-charset="utf-8" target="_self">
                 <label for="email">Email</label><br />
                 <input type="email" name="email" id="email" required /><br />
-            
+
                 <!-- Honeypot -->
                 <div style="display:none;">
                     <label for="hp">HP</label><br />
                     <input type="text" name="hp" id="hp" />
                 </div>
-            
+
                 <input type="hidden" name="list" value="BfxOS5dRsHbTjVZ0QH09jA" />
                 <input type="hidden" name="subform" value="yes" />
                 <input type="submit" name="submit" id="submit" value="🎁 Secure My Free Spins Now!" style="
-                    background-color: #28a745;
-                    color: white;
-                    padding: 12px 0;
-                    font-size: 18px;
-                    font-weight: bold;
-                    border: none;
-                    border-radius: 8px;
-                    width: 100%;
-                    max-width: 300px;
-                    display: block;
-                    margin: 20px auto 10px;
-                    cursor: pointer;
-                    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-                " onclick="handleSubscription(event)" />
-                
+    background-color: #28a745;
+    color: white;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 20px auto 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+" />
+
                 <p style="text-align: center; font-size: 0.85em; color: #666;">
                     🔒 No spam, unsubscribe anytime. 100% safe & verified offer.
                 </p>
             </form>
-            
+
             <script>
-                function handleSubscription(event) {
-                    event.preventDefault();  // 阻止表单的默认提交
-            
-                    // 获取表单数据
-                    const email = document.getElementById("email").value;
-                    console.log("Email submitted: " + email);
-            
-                    // 使用 fetch 异步提交表单
-                    const formData = new FormData(document.getElementById("subscribeForm"));
-                    fetch(document.getElementById("subscribeForm").action, {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Response:', data);
-            
-                        // 1. 在新窗口中打开 offer 页面
-                        window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', "_blank");
-            
-                        // 2. 让当前页面跳转到邮箱订阅页面
-                        location.href = "https://cas-track.online/sendy/subscribe";  // 邮箱订阅页面的 URL
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);  // 捕获并打印任何错误
-                    });
-                }
+                document.getElementById("subscribeForm").addEventListener("submit", function () {
+                    // 替换成你自己的 offer 链接 👇
+                    const offerUrl = "https://innovate-niche.com/chv3l3k.php?key=ybzoy66mivk27imho24y&c1={type}&c2={geo}";
+                    // 在新窗口中打开 offer 页面
+                    window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', "_blank");
+                });
             </script>
         </div>
 
