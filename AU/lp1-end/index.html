@@ -227,17 +227,28 @@
 
             <script>
                 document.getElementById("subscribeForm").addEventListener("submit", function (event) {
-    event.preventDefault();  // 阻止表单提交
+    event.preventDefault();  // 阻止表单的默认提交
 
-    // 打印表单数据查看是否正确
+    // 获取表单数据
     const email = document.getElementById("email").value;
     console.log("Email submitted: " + email);  // 确认输入的邮箱
 
-    // 在新窗口中打开 offer 页面
-    window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', "_blank");
+    // 使用 fetch 异步提交表单
+    const formData = new FormData(event.target);
+    fetch(event.target.action, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Response:', data);  // 打印服务器响应数据
 
-    // 手动提交表单
-    document.getElementById("subscribeForm").submit();
+        // 在新窗口中打开 offer 页面
+        window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', "_blank");
+    })
+    .catch(error => {
+        console.error('Error:', error);  // 捕获并打印任何错误
+    });
 });
             </script>
         </div>
