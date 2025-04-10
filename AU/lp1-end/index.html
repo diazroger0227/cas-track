@@ -226,11 +226,14 @@
             </form>
 
             <script>
-                document.getElementById("subscribeForm").addEventListener("submit", function () {
-                    // 替换成你自己的 offer 链接 👇
-                    const offerUrl = "https://innovate-niche.com/chv3l3k.php?key=ybzoy66mivk27imho24y&c1={type}&c2={geo}";
+                document.getElementById("subscribeForm").addEventListener("submit", function (event) {
+                    event.preventDefault();  // 阻止表单提交
+            
                     // 在新窗口中打开 offer 页面
                     window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', "_blank");
+            
+                    // 你可以在这里手动提交表单
+                    document.getElementById("subscribeForm").submit();
                 });
             </script>
         </div>
