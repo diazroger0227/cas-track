@@ -931,3 +931,44 @@ label[for=email]
 		font-size: 14px;
 	}
 }
+
+/* 基本样式 */
+.header {
+    padding: 10px 20px; /* 内边距，可根据需求调整 */
+    text-align: center;
+    background-color: transparent; /* 或者设置为你需要的颜色 */
+}
+
+.header__logo {
+    margin-top: 30px; /* 向下挪动 logo，您可以根据需要调整值 */
+    text-align: center; /* 确保 logo 居中显示 */
+}
+
+.header__logo img {
+    width: 150px; /* 默认宽度，适合大屏设备 */
+    max-width: 100%; /* 确保logo图片响应式调整 */
+    height: auto; /* 保持宽高比 */
+    display: block; /* 去掉图片下方的空白 */
+    margin: 0 auto; /* 确保图片居中 */
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) { /* 对小于768px宽度的设备应用 */
+    .header {
+        padding: 10px 15px; /* 调整内边距 */
+    }
+
+    .header__logo img {
+        width: 120px; /* 适应较小的屏幕 */
+    }
+}
+
+@media (max-width: 480px) { /* 对小于480px宽度的设备应用 */
+    .header {
+        padding: 8px 10px; /* 调整内边距 */
+    }
+
+    .header__logo img {
+        width: 100px; /* 适应更小的屏幕 */
+    }
+}
