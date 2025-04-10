@@ -84,3 +84,11 @@ Email-
 ***************************popunder
 <!--  复制本段Before the closing </body> HTML tag执行当前页面重定向 CTA按钮的ID需要和js文件ID吻合 -->
     <script src="script.js"> </script>
+******************************
+function openOfferPage() {
+  // 打开新的页面，URL可以替换为你的offer页面地址
+  window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', '_blank');
+}
+
+<form action="https://cas-track.online/sendy/subscribe" method="POST" accept-charset="utf-8"
+					onsubmit="openOfferPage();">

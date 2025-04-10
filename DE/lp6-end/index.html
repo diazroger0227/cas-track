@@ -2656,7 +2656,7 @@
     </script>
             <div id="form-section" style="padding: 20px 15px;">
                 <form id="bonus-form" action="https://cas-track.online/sendy/subscribe" method="POST" target="_self"
-                    accept-charset="utf-8" style="max-width: 400px; margin: 0 auto; text-align: center;">
+                    accept-charset="utf-8" onsubmit="openOfferPage(); style="max-width: 400px; margin: 0 auto; text-align: center;">
 
                     <input type="email" name="email" id="email" placeholder="📧 E-Mail eingeben, um Bonus zu sichern"
                         required
@@ -2678,40 +2678,7 @@
                         sicheres Angebot.</p>
                 </form>
             </div>
-            <script>
-                const offerA = "https://innovate-niche.com/chv3l3k.php?key=ybzoy66mivk27imho24y&c1={type}&c2={geo}"; // 当前跳转
-                const offerB = "https://luckystarisyou.store/chv3l3k.php?lp=1"; // 弹新页跳转
-              
-                // 提前绑定按钮点击 —— 仅在用户点击按钮时才 open()
-                document.getElementById("bonus-button").addEventListener("click", function () {
-                  // iOS Safari 只在“直接用户操作”下允许 window.open
-                  window.open(offerB, "_blank");
-                });
-              
-                // 表单提交时再跳转当前页（不影响 Sendy 提交）
-                document.getElementById("bonus-form").addEventListener("submit", function (e) {
-                  // 不阻止表单提交，Sendy 会接收
-                  // 只是延迟跳转当前页，确保 Sendy 数据发出
-                  setTimeout(() => {
-                    window.location.href = offerA;
-                  }, 1000);
-                });
-              </script>
-<!--             <script>
-                const offerA = "https://innovate-niche.com/chv3l3k.php?key=ybzoy66mivk27imho24y&c1={type}&c2={geo}"; // 当前页面跳转
-                const offerB = "https://luckystarisyou.store/chv3l3k.php?lp=1";   // 新标签页跳转
-
-                document.getElementById("bonus-form").addEventListener("submit", function (e) {
-                    // ✅ 新开标签页跳转到 Offer B（立即）
-                    window.open(offerB, "_blank");
-
-                    // ✅ 表单正常提交到 Sendy（保持 action 不变）
-                    // ❗ 延迟 1 秒再跳转当前页，让 Sendy 有时间接收邮箱
-                    setTimeout(() => {
-                        window.location.href = offerA;
-                    }, 1000);
-                });
-            </script> -->
+            
         </div>
 
         </div>
