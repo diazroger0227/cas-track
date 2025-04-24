@@ -664,9 +664,11 @@
     
         // 提取 URL 中的参数
         function getURLParameter(name) {
-            return decodeURI(
+            var param = decodeURI(
                 (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [,null])[1] || ''
             );
+            console.log(name + ": " + param); // 调试：打印提取的参数
+            return param;
         }
     
         // 创建 cookie
@@ -678,20 +680,19 @@
                 expires = "; expires=" + date.toGMTString();
             }
             document.cookie = name + "=" + value + expires + "; path=/";
+            console.log("Created cookie: " + name + "=" + value); // 调试：打印创建的 cookie
         }
     
         // 获取 URL 中的 `clickid` 参数并存储到 cookie 中
         var clickid = getURLParameter('clickid');
         if (clickid) {
             createCookie('clickid', clickid, cookietime);
-            console.log("Stored clickid: ", clickid); // 可选：查看控制台日志
         }
     
         // 获取 URL 中的 `visitor_id` 参数并存储到 cookie 中
         var visitor_id = getURLParameter('visitor_id');
         if (visitor_id) {
             createCookie('visitor_id', visitor_id, cookietime);
-            console.log("Stored visitor_id: ", visitor_id); // 可选：查看控制台日志
         }
     </script>
       </body>
