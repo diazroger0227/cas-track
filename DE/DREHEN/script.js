@@ -13,6 +13,7 @@ const parseParams = (querystring) => {
   }
   return obj;
 };
+console.log('Query string:', window.location.search);
 const params = parseParams(window.location.search);
 console.log('URL query params:', params);
 
@@ -66,7 +67,7 @@ async function submitForm(event) {
 // If the response status is 200, the the form is valid
     if (response.status === 200) {
       console.log('✅  Success!');
-      window.location.replace(`ThankYou.html?clickid=${params.clickid}`);
+      window.location.replace(`ThankYou.html?clickid=${params.visitor_id}`);
      
 // If the response status isn't 200, the form wasn't accepted and will display the error message returned
     } else {

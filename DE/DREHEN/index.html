@@ -183,21 +183,41 @@
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7TDH3PQ" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-	<script>
+	<!-- <script>
 		(function (window, location) {
-			history.replaceState(null, document.title, location.pathname + "#!/history");
-			history.pushState(null, document.title, location.pathname);
+		
+		history.replaceState(null, document.title, location.pathname + "#!/history");
+		
+		
+		history.pushState(null, document.title, location.pathname);
 
-			window.addEventListener("popstate", function () {
-				if (location.hash === "#!/history") {
-					history.replaceState(null, document.title, location.pathname);
-					setTimeout(function () {
-						location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=DE");
-					}, 0);
+		
+		window.addEventListener("popstate", function () {
+		
+			if (location.hash === "#!/history") {
+			
+			history.replaceState(null, document.title, location.pathname);
+
+		
+			setTimeout(function () {
+				
+				const params = new URLSearchParams(location.search);
+				console.log('Current URL query parameters:', params); 
+
+				
+				const clickid = params.get('clickid');
+				if (clickid) {
+				console.log('Click ID:', clickid); 
 				}
-			}, false);
+
+				
+				location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=DE");
+			}, 100);  
+			}
+		}, false);
 		}(window, location));
-	</script>
+
+	</script> -->
 	<script src="script.js"></script>
 
 </body>
