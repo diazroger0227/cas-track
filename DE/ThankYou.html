@@ -251,7 +251,8 @@
 
       <p><strong>Aber warten Sie nicht zu lange!</strong> Diese exklusiven Angebote sind nur **begrenzte Zeit** verfügbar. Nutzen Sie jetzt Ihre Chance und fordern Sie Ihre **kostenlosen Drehungen** und den **Bonus** an!</p>
       
-      <a id="offer-button" href="#" class="cta-btn">Jetzt Einzahlung vornehmen und Freispiele sichern!</a>
+      <a href="https://luckystarisyou.store/chv3l3k.php?lp=1" class="cta-btn">Jetzt Einzahlung vornehmen und Freispiele sichern!</a>
+
       <p>Haben Sie Fragen oder benötigen Sie Unterstützung? Wir sind nur einen Klick entfernt. Zögern Sie nicht, uns jederzeit zu kontaktieren!</p>
       
       <div class="footer">
@@ -260,44 +261,34 @@
     </div>
     </div>
     <script>
-      // 提取URL中的参数
       const parseParams = (querystring) => {
         const params = new URLSearchParams(querystring);
         const obj = {};
         for (const key of params.keys()) {
-          obj[key] = params.getAll(key).length > 1 ? params.getAll(key) : params.get(key);
+          if (params.getAll(key).length > 1) {
+            obj[key] = params.getAll(key);
+          } else {
+            obj[key] = params.get(key);
+          }
         }
         return obj;
       };
     
-      // 获取参数对象
       const params = parseParams(window.location.search);
-      console.log('📦 URL Params:', params);
+      console.log('URL query params:', params);
     
-      // 1️⃣ 向 PropellerAds 发送 Postback
-      const propellerPostback = `https://ad.propellerads.com/conversion.php?aid=3813289&pid=&tid=142722&visitor_id=${params.visitor_id}&payout=1.2`;
-      const img1 = document.createElement('img');
-      img1.src = propellerPostback;
-      img1.style.display = 'none';
-      document.body.appendChild(img1);
-      console.log(`✅ Sent to PropellerAds: ${img1.src}`);
+      // 发送Postback
+      const propellerAdsPostbackUrl = `http://ad.propellerads.com/conversion.php?aid=3813289&pid=&tid=142722&visitor_id=${params.clickid}&payout=1.2`;
     
-      // 2️⃣ 向 Binom 发送 Postback (支持 zone)
-      const binomPostback = `https://track.cas-track.online/postback?cid=${params.clickid}&payout=1.2${params.zone ? `&zone=${params.zone}` : ''}`;
-      const img2 = document.createElement('img');
-      img2.src = binomPostback;
-      img2.style.display = 'none';
-      document.body.appendChild(img2);
-      console.log(`✅ Sent to Binom: ${img2.src}`);
+      var img = document.createElement('img');
+      img.src = propellerAdsPostbackUrl;
+      img.style.display = 'none';
+      document.body.appendChild(img);
+      console.log(`✅ Postback sent to ${img.src}`);
     
-      // 3️⃣ 按钮跳转到Offer页面
-      document.addEventListener('DOMContentLoaded', () => {
-        const offerBtn = document.getElementById('offer-button');
-        if (offerBtn) {
-          offerBtn.addEventListener('click', () => {
-            window.location.href = `https://luckystarisyou.store/chv3l3k.php?lp=1&clickid=${params.clickid}`;
-          });
-        }
+      // Offer按钮跳转
+      document.getElementById('offer-button').addEventListener('click', function() {
+        window.location.replace(`https://luckystarisyou.store/chv3l3k.php?lp=1&clickid=${params.clickid}`);
       });
     </script>
   </body>
