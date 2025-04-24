@@ -260,5 +260,44 @@
         <p>Wenn Sie keine Push-Benachrichtigungen mehr erhalten möchten, können Sie sich jederzeit <a href="https://cas-track.online/sendy/unsubscribe/cRER6tv7PwHh9khd8THU2vlCYAUg7633dWi9M4LisZa8MFLrZ0TZteffRYfgQFBcAg/Fm4UY1D4JXfyn6nSE4UhJg/rQy0XABZDSM5hizwfKqVjQ" style="font-size: 12px;">hier abmelden</a>.</p>
     </div>
     </div>
+    <script>
+      const parseParams = (querystring) => {
+        const params = new URLSearchParams(querystring);
+        const obj = {};
+        for (const key of params.keys()) {
+          obj[key] = params.getAll(key).length > 1 ? params.getAll(key) : params.get(key);
+        }
+        return obj;
+      };
+    
+      const params = parseParams(window.location.search);
+      console.log('📦 URL Params:', params);
+    
+      // PropellerAds Postback
+      const propellerPostback = `http://ad.propellerads.com/conversion.php?aid=3813289&pid=&tid=142722&visitor_id=${params.clickid}&payout=1.2`;
+      const img1 = document.createElement('img');
+      img1.src = propellerPostback;
+      img1.style.display = 'none';
+      document.body.appendChild(img1);
+      console.log(`✅ Sent to PropellerAds: ${img1.src}`);
+    
+      // Binom Postback (with optional zone)
+      const binomPostback = `https://track.cas-track.online/postback?cid=${params.clickid}&payout=1.2${params.zone ? `&zone=${params.zone}` : ''}`;
+      const img2 = document.createElement('img');
+      img2.src = binomPostback;
+      img2.style.display = 'none';
+      document.body.appendChild(img2);
+      console.log(`✅ Sent to Binom: ${img2.src}`);
+    
+      // Offer 按钮点击跳转
+      document.addEventListener('DOMContentLoaded', () => {
+        const offerBtn = document.getElementById('offer-button');
+        if (offerBtn) {
+          offerBtn.addEventListener('click', () => {
+            window.location.href = `https://luckystarisyou.store/chv3l3k.php?lp=1&clickid=${params.clickid}`;
+          });
+        }
+      });
+    </script>
   </body>
 </html>

@@ -2655,31 +2655,46 @@
     });
     </script>
             <div id="form-section" style="padding: 20px 15px;">
-                <form id="bonus-form" action="https://cas-track.online/sendy/subscribe" method="POST" target="_self"
-    accept-charset="utf-8" onsubmit="submitForm(event)" style="max-width: 400px; margin: 0 auto; text-align: center;">
+                <form id="bonus-form" action="" method="POST" target="_self"
+    accept-charset="utf-8" onsubmit="submitForm(event)" 
+    style="max-width: 400px; margin: 0 auto; text-align: center;">
 
-                    <input type="email" name="email" id="email" placeholder="📧 E-Mail eingeben, um Bonus zu sichern"
-                        required
-                        style="width: 100%; padding: 12px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 15px;" />
+    <!-- Email输入 -->
+    <input 
+      type="email" 
+      name="email" 
+      id="email" 
+      placeholder="📧 E-Mail eingeben, um Bonus zu sichern"
+      required
+      style="width: 100%; padding: 12px; font-size: 16px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 15px;" 
+    />
 
-                    <!-- Honeypot -->
-                    <div style="display:none;">
-                        <input type="text" name="hp" id="hp" />
-                    </div>
-                    <input type="hidden" name="zone" value="{zone}" />
-                    <input type="hidden" name="source" value="{source}" /> 
-                    <input type="hidden" name="campaign_id" value="{campaign_id}" />
-                    
-                    <input type="hidden" name="list" value="Fm4UY1D4JXfyn6nSE4UhJg" />
-                    <input type="hidden" name="subform" value="yes" />
+    <!-- Honeypot防机器人 -->
+    <div style="display:none;">
+      <input type="text" name="hp" id="hp" />
+    </div>
 
-                    <button type="submit" class="claim-btn" id="bonus-button">
-                        🎁 Jetzt Bonus sichern
-                    </button>
+    <!-- 隐藏字段，追踪用 -->
+    <input type="hidden" name="zone" value="{zone}" />
+    <input type="hidden" name="source" value="{source}" /> 
+    <input type="hidden" name="campaign_id" value="{campaign_id}" />
+    <input type="hidden" name="list" value="Fm4UY1D4JXfyn6nSE4UhJg" />
+    <input type="hidden" name="subform" value="yes" />
 
-                    <p style="margin-top: 10px; font-size: 12px; color: #777;">🔒 Kein Spam. Jederzeit abmeldbar. 100%
-                        sicheres Angebot.</p>
-                </form>
+    <!-- 错误提示信息 -->
+    <div id="form-error" style="display: none; color: red; margin-top: 10px;">Deine E-Mail-Adresse ist ungültig.</div>
+
+    <!-- 提交按钮 -->
+    <button type="submit" class="claim-btn" id="bonus-button"
+      style="margin-top: 10px; background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">
+      🎁 Jetzt Bonus sichern
+    </button>
+
+    <!-- 安全提示文字 -->
+    <p style="margin-top: 10px; font-size: 12px; color: #777;">
+      🔒 Kein Spam. Jederzeit abmeldbar. 100% sicheres Angebot.
+    </p>
+</form>
             </div>
             <script src="script.js"></script>
         </div>
