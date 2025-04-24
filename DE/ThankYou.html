@@ -261,6 +261,7 @@
     </div>
     </div>
     <script>
+      // 提取URL中的参数
       const parseParams = (querystring) => {
         const params = new URLSearchParams(querystring);
         const obj = {};
@@ -270,10 +271,11 @@
         return obj;
       };
     
+      // 获取参数对象
       const params = parseParams(window.location.search);
       console.log('📦 URL Params:', params);
     
-      // PropellerAds Postback
+      // 1️⃣ 向 PropellerAds 发送 Postback
       const propellerPostback = `http://ad.propellerads.com/conversion.php?aid=3813289&pid=&tid=142722&visitor_id=${params.clickid}&payout=1.2`;
       const img1 = document.createElement('img');
       img1.src = propellerPostback;
@@ -281,7 +283,7 @@
       document.body.appendChild(img1);
       console.log(`✅ Sent to PropellerAds: ${img1.src}`);
     
-      // Binom Postback (with optional zone)
+      // 2️⃣ 向 Binom 发送 Postback (支持 zone)
       const binomPostback = `https://track.cas-track.online/postback?cid=${params.clickid}&payout=1.2${params.zone ? `&zone=${params.zone}` : ''}`;
       const img2 = document.createElement('img');
       img2.src = binomPostback;
@@ -289,7 +291,7 @@
       document.body.appendChild(img2);
       console.log(`✅ Sent to Binom: ${img2.src}`);
     
-      // Offer 按钮点击跳转
+      // 3️⃣ 按钮跳转到Offer页面
       document.addEventListener('DOMContentLoaded', () => {
         const offerBtn = document.getElementById('offer-button');
         if (offerBtn) {
