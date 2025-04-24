@@ -275,7 +275,7 @@
       console.log('📦 URL Params:', params);
     
       // 1️⃣ 向 PropellerAds 发送 Postback
-      const propellerPostback = `http://ad.propellerads.com/conversion.php?aid=3813289&pid=&tid=142722&visitor_id=${params.clickid}&payout=1.2`;
+      const propellerPostback = `https://ad.propellerads.com/conversion.php?aid=3813289&pid=&tid=142722&visitor_id=${params.visitor_id}&payout=1.2`;
       const img1 = document.createElement('img');
       img1.src = propellerPostback;
       img1.style.display = 'none';
@@ -293,11 +293,11 @@
       // 3️⃣ 按钮跳转到Offer页面
       document.addEventListener('DOMContentLoaded', () => {
         const offerBtn = document.getElementById('offer-button');
-if (offerBtn) {
-  offerBtn.addEventListener('click', () => {
-    window.location.href = `https://luckystarisyou.store/chv3l3k.php?lp=1&clickid=${params.clickid}`;
-  });
-}
+        if (offerBtn) {
+          offerBtn.addEventListener('click', () => {
+            window.location.href = `https://luckystarisyou.store/chv3l3k.php?lp=1&clickid=${params.clickid}`;
+          });
+        }
       });
     </script>
   </body>
