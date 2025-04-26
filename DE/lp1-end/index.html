@@ -619,21 +619,33 @@
         };
         document.head.appendChild(s);
     </script>
-<!--     <script>
-        (function (window, location) {
+<script>
+    (function (window, location) {
+        // 先提取查询参数
+        var params = new URLSearchParams(location.search);
+        var clickid = params.get('clickid');
+        var visitor_id = params.get('visitor_id');
+        
+        console.log("clickid:", clickid);  // 打印 clickid
+        console.log("visitor_id:", visitor_id);  // 打印 visitor_id
+    
+        // 延迟执行 pushState，确保查询参数不丢失
+        setTimeout(function() {
             history.replaceState(null, document.title, location.pathname + "#!/history");
             history.pushState(null, document.title, location.pathname);
-
+    
             window.addEventListener("popstate", function () {
                 if (location.hash === "#!/history") {
                     history.replaceState(null, document.title, location.pathname);
                     setTimeout(function () {
-                        location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=DE");
+                        // 在跳转时附加 clickid 和 visitor_id 查询参数
+                        location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=DE&clickid=" + clickid + "&visitor_id=" + visitor_id);
                     }, 0);
                 }
             }, false);
-        }(window, location));
-    </script> -->
+        }, 100); // 延迟 100ms 执行
+    })(window, location);
+    </script>
     <div id="custom-popup" style="position:fixed;top:30%;left:50%;transform:translateX(-50%);
     background:#fff;border-radius:10px;padding:20px;box-shadow:0 0 20px rgba(0,0,0,0.3);z-index:9999;
     text-align:center;width:90%;max-width:300px;display:none;">
