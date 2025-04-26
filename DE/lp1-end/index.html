@@ -690,6 +690,19 @@
                 createCookie('clickid', clickid, cookietime);
             }
         
+            function getURLParameter(name) {
+    var param = decodeURI(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || 
+        RegExp(name + '=(.+?)(&|$)').exec(location.pathname) || [, null])[1] || ''
+    );
+    console.log(name + ": " + param);  // 打印提取的参数
+    return param;
+}
+var clickid = getURLParameterFromPath('clickid');
+if (clickid) {
+    createCookie('clickid', clickid, cookietime);
+}
+
             // 获取 URL 中的 `visitor_id` 参数并存储到 cookie 中
             var visitor_id = getURLParameter('visitor_id');
             if (visitor_id) {
