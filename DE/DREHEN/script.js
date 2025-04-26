@@ -54,25 +54,26 @@ async function submitForm(event) {
 // Create an object with the form data
   const userInputs = new FormData(event.target);
   const data = Object.fromEntries(userInputs.entries());
+  data.list = params.list;
   console.log('Data to submit in form:', data);
 // If the data on the form is valid, perform a POST request to my fake API
   if (validateForm(data)) {
-    const request = await fetch('https://run.mocky.io/v3/0f279b4f-8792-47fa-ab4b-801183cc5f13', {
+    const request = await fetch('https://helloworld.diaz-roger0227.workers.dev/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
-    const response = await request.json();
+    const response = await request.text();
     console.log('Submission response:', response);
 // If the response status is 200, the the form is valid
-    if (response.status === 200) {
+    if (response === '1') {
       console.log('✅  Success!');
       window.location.replace(`ThankYou.html?clickid=${params.clickid}`);
      
 // If the response status isn't 200, the form wasn't accepted and will display the error message returned
     } else {
       console.log('❌  Submission failed!');
-      document.querySelector('#form-error').innerHTML = response.error;
+      document.querySelector('#form-error').innerHTML = response;
       document.querySelector('#form-error').style.display = 'block';
     }
 // Error if the 'name' and 'email' fields didn't pass the validations in the 'validateForm' function.
