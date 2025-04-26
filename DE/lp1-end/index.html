@@ -659,41 +659,43 @@
     </script>
     
     <script>
-        // 默认 cookie 存储时间为 1 天
-        var cookietime = '1'; 
-    
-        // 提取 URL 中的参数
-        function getURLParameter(name) {
-            var param = decodeURI(
-                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [,null])[1] || ''
-            );
-            console.log(name + ": " + param); // 调试：打印提取的参数
-            return param;
-        }
-    
-        // 创建 cookie
-        function createCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // 设置过期时间
-                expires = "; expires=" + date.toGMTString();
+        document.addEventListener('DOMContentLoaded', function () {
+            // 默认 cookie 存储时间为 1 天
+            var cookietime = '1'; 
+        
+            // 提取 URL 中的参数
+            function getURLParameter(name) {
+                var param = decodeURI(
+                    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [,null])[1] || ''
+                );
+                console.log(name + ": " + param); // 调试：打印提取的参数
+                return param;
             }
-            document.cookie = name + "=" + value + expires + "; path=/";
-            console.log("Created cookie: " + name + "=" + value); // 调试：打印创建的 cookie
-        }
-    
-        // 获取 URL 中的 `clickid` 参数并存储到 cookie 中
-        var clickid = getURLParameter('clickid');
-        if (clickid) {
-            createCookie('clickid', clickid, cookietime);
-        }
-    
-        // 获取 URL 中的 `visitor_id` 参数并存储到 cookie 中
-        var visitor_id = getURLParameter('visitor_id');
-        if (visitor_id) {
-            createCookie('visitor_id', visitor_id, cookietime);
-        }
+        
+            // 创建 cookie
+            function createCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // 设置过期时间
+                    expires = "; expires=" + date.toGMTString();
+                }
+                document.cookie = name + "=" + value + expires + "; path=/";
+                console.log("Created cookie: " + name + "=" + value); // 调试：打印创建的 cookie
+            }
+        
+            // 获取 URL 中的 `clickid` 参数并存储到 cookie 中
+            var clickid = getURLParameter('clickid');
+            if (clickid) {
+                createCookie('clickid', clickid, cookietime);
+            }
+        
+            // 获取 URL 中的 `visitor_id` 参数并存储到 cookie 中
+            var visitor_id = getURLParameter('visitor_id');
+            if (visitor_id) {
+                createCookie('visitor_id', visitor_id, cookietime);
+            }
+        });
     </script>
       </body>
 </body>
