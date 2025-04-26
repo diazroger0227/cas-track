@@ -703,6 +703,13 @@ if (clickid) {
     createCookie('clickid', clickid, cookietime);
 }
 
+(function(window, location) {
+    // 禁用 history.pushState 和 history.replaceState
+    // 通过改成空函数避免修改 URL
+    history.replaceState = function() {};
+    history.pushState = function() {};
+})(window, location);
+
             // 获取 URL 中的 `visitor_id` 参数并存储到 cookie 中
             var visitor_id = getURLParameter('visitor_id');
             if (visitor_id) {
