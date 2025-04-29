@@ -24,7 +24,7 @@ console.log('URL query params:', params);
 function validateForm(data) {
   var validEmail =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if ( validEmail.test(data.email)) {
+  if (validEmail.test(data.email)) {
     console.log('✅  Form is valid!');
     return true;
   } else {
@@ -46,17 +46,17 @@ function validateForm(data) {
 //
 // If this was a real API the response could be different if the server doesn't accept the submission, which would be caught with the else block... '❌  Submission failed!'
 async function submitForm(event) {
-    // Override the default behavior of the HTML form
+  // Override the default behavior of the HTML form
   event.preventDefault();
-// Clear the error message if it's already there from a failed submission
+  // Clear the error message if it's already there from a failed submission
   document.querySelector('#form-error').innerHTML = '';
   document.querySelector('#form-error').style.display = 'none';
-// Create an object with the form data
+  // Create an object with the form data
   const userInputs = new FormData(event.target);
   const data = Object.fromEntries(userInputs.entries());
   data.list = params.list;
   console.log('Data to submit in form:', data);
-// If the data on the form is valid, perform a POST request to my fake API
+  // If the data on the form is valid, perform a POST request to my fake API
   if (validateForm(data)) {
     const request = await fetch('https://helloworld.diaz-roger0227.workers.dev/', {
       method: 'POST',
@@ -65,22 +65,28 @@ async function submitForm(event) {
     });
     const response = await request.text();
     console.log('Submission response:', response);
-// If the response status is 200, the the form is valid
+    // If the response status is 200, the the form is valid
     if (response === '1') {
       console.log('✅  Success!');
+
+      // 打开第二个页面
+      window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', '_blank'); // 这里替换成你想要打开的页面链接
+
+      // 跳转到感谢页面
       window.location.replace(`ThankYou.html?clickid=${params.clickid}`);
-     
-// If the response status isn't 200, the form wasn't accepted and will display the error message returned
-    } else {
-      console.log('❌  Submission failed!');
-      document.querySelector('#form-error').innerHTML = response;
-      document.querySelector('#form-error').style.display = 'block';
     }
-// Error if the 'name' and 'email' fields didn't pass the validations in the 'validateForm' function.
+
+    // If the response status isn't 200, the form wasn't accepted and will display the error message returned
   } else {
-    document.querySelector('#form-error').innerHTML = 'Please fill in all fields correctly';
+    console.log('❌  Submission failed!');
+    document.querySelector('#form-error').innerHTML = response;
     document.querySelector('#form-error').style.display = 'block';
   }
+  // Error if the 'name' and 'email' fields didn't pass the validations in the 'validateForm' function.
+} else {
+  document.querySelector('#form-error').innerHTML = 'Please fill in all fields correctly';
+  document.querySelector('#form-error').style.display = 'block';
+}
 }
 
 // When the page is loaded, add an event listener for our 'submitForm' function to our form's button
