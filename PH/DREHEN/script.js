@@ -32,7 +32,6 @@ function validateForm(data) {
 
 async function submitForm(event) {
    
-  const clickid = params.visitor_id;
   
   event.preventDefault();
   document.querySelector('#form-error').innerHTML = '';
@@ -56,7 +55,7 @@ async function submitForm(event) {
       console.log('✅  Success!');
       window.open('https://luckystarisyou.store/chv3l3k.php?lp=1');
       
-      window.location.replace(`ThankYou.html?clickid=${clickid}`);
+      window.location.replace(`ThankYou.html?clickid=${params.clickid}`);
      
 
     } else {
