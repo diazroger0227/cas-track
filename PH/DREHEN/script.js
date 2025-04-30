@@ -44,13 +44,13 @@ async function submitForm(event) {
   console.log('Data to submit in form:', data);
 
   if (validateForm(data)) {
-    const request = await fetch('https://helloworld.diaz-roger0227.workers.dev/', {
+   /*  const request = await fetch('https://helloworld.diaz-roger0227.workers.dev/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
-    const response = await request.text();
-
+    const response = await request.text(); */
+    const response = '1';
     
     if (response === '1') {
       console.log('✅  Success!');
@@ -61,7 +61,7 @@ async function submitForm(event) {
 
     } else {
       console.log('❌  Submission failed!');
-      document.querySelector('#form-error').innerHTML = response;
+      document.querySelector('#form-error').innerHTML = 'Please fill in all fields correctly';
       document.querySelector('#form-error').style.display = 'block';
     }
 

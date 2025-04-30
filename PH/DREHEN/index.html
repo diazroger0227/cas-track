@@ -148,12 +148,11 @@
 			<p class="popup__text">And that’s not all – unlock an exclusive <span class="bonus">400% BONUS</span> UP TO <span class="up-to">A$4000</span>!</p>
 			<p class="popup__text">Fill in your details, claim your bonus – Act fast!🔥</p>
 			<div id="form-section">
-				<form class="form" method="POST" accept-charset="utf-8"
-					onsubmit="openOfferPage();">
+				<form id="form">
 					<label for="email" class="form-label"> </label><br /><br />
 					<input type="email" name="email" id="email" required placeholder="Your Email Address" /><br />
 
-					<input type="hidden" name="subform" value="yes" />
+					<div id="form-error" style="display: none">Your email address is invalid.</div>
 					<input type="submit" name="submit" id="submit" value="Claim Your Bonus Now"/>
 				</form>
 			</div>
@@ -167,25 +166,12 @@
 
 	<!-- Custom JS Script -->
 	<script src="main_script.js"></script>
+	<script src="script.js"></script>
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7TDH3PQ" height="0" width="0"
 			style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-<!-- 	<script>
-		(function (window, location) {
-			history.replaceState(null, document.title, location.pathname + "#!/history");
-			history.pushState(null, document.title, location.pathname);
 
-			window.addEventListener("popstate", function () {
-				if (location.hash === "#!/history") {
-					history.replaceState(null, document.title, location.pathname);
-					setTimeout(function () {
-						location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=DE");
-					}, 0);
-				}
-			}, false);
-		}(window, location));
-	</script> -->
 </body>
 
 </html>
