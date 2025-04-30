@@ -29,33 +29,6 @@
 		};
 		document.head.appendChild(s);
 	</script>
-	<script>
-        // 你的原始代码
-        var clickid = 'visitor_id'; // 设置默认的clickid名称
-        var cookietime = '1'; // 默认的cookie时间
-
-        function getURLParameter(name) {
-            return decodeURI(
-                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
-            );
-        }
-
-        function createCookie(name, value, days) {
-            var expires;
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toGMTString();
-            } else {
-                expires = "";
-            }
-            document.cookie = name + "=" + value + expires + "; path=/";
-        }
-
-        if (getURLParameter(clickid)) {
-            createCookie('clickid', getURLParameter(clickid), cookietime);
-        }
-    </script>
 </head>
 
 <body>
@@ -175,19 +148,13 @@
 			<p class="popup__text">And that’s not all – unlock an exclusive <span class="bonus">400% BONUS</span> UP TO <span class="up-to">A$4000</span>!</p>
 			<p class="popup__text">Fill in your details, claim your bonus – Act fast!🔥</p>
 			<div id="form-section">
-				<form action="https://cas-track.online/sendy/subscribe" method="POST" accept-charset="utf-8"
+				<form class="form" method="POST" accept-charset="utf-8"
 					onsubmit="openOfferPage();">
 					<label for="email" class="form-label"> </label><br /><br />
 					<input type="email" name="email" id="email" required placeholder="Your Email Address" /><br />
-					<!-- Honeypot-->
-					<div style="display:none;">
-						<label for="hp">HP</label><br />
-						<input type="text" name="hp" id="hp" />
-					</div>
 
-					<input type="hidden" name="list" value="BfxOS5dRsHbTjVZ0QH09jA" />
 					<input type="hidden" name="subform" value="yes" />
-					<input type="submit" name="submit" id="submit" value="Claim Your Bonus Now" />
+					<input type="submit" name="submit" id="submit" value="Claim Your Bonus Now"/>
 				</form>
 			</div>
 
