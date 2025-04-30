@@ -43,14 +43,14 @@ async function submitForm(event) {
   console.log('Data to submit in form:', data);
 
   if (validateForm(data)) {
-   /*  const request = await fetch('https://helloworld.diaz-roger0227.workers.dev/', {
+const request = await fetch('https://helloworld.diaz-roger0227.workers.dev/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
-    const response = await request.text(); */
-    const response = '1';
-    
+    const response = await request.text();
+/*     const response = '1';
+ */    
     if (response === '1') {
       console.log('✅  Success!');
       window.open('https://luckystarisyou.store/chv3l3k.php?lp=1');
