@@ -1,75 +1,58 @@
-
 const parseParams = (querystring) => {
   const params = new URLSearchParams(querystring);
   const obj = {};
   for (const key of params.keys()) {
-    if (params.getAll(key).length > 1) {
-      obj[key] = params.getAll(key);
-    } else {
-      obj[key] = params.get(key);
-    }
+      obj[key] = params.getAll(key).length > 1 ? params.getAll(key) : params.get(key);
   }
   return obj;
 };
-console.log('Query string:', window.location.search);
+
 const params = parseParams(window.location.search);
-console.log('URL query params:', params);
-
-
+console.log('URL params:', params);
 
 function validateForm(data) {
-  var validEmail =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if ( validEmail.test(data.email)) {
-    console.log('✅  Form is valid!');
-    return true;
-  } else {
-    console.log('❌  Form is invalid!');
-    return false;
+  const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!data.name || !data.email || !validEmail.test(data.email)) {
+      return false;
   }
+  return true;
 }
-
 
 async function submitForm(event) {
-   
-  
   event.preventDefault();
-  document.querySelector('#form-error').innerHTML = '';
-  document.querySelector('#form-error').style.display = 'none';
+  const errorEl = document.querySelector('#form-error');
+  errorEl.textContent = '';
+  errorEl.style.display = 'none';
 
-  const userInputs = new FormData(event.target);
-  const data = Object.fromEntries(userInputs.entries());
-  data.list = params.list;
-  console.log('Data to submit in form:', data);
+  const data = Object.fromEntries(new FormData(event.target).entries());
+  data.list = params.list; // 关键：添加 Sendy list ID
+  console.log('Submitting data:', data);
 
-  if (validateForm(data)) {
-const request = await fetch('https://helloworld.diaz-roger0227.workers.dev/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-    const response = await request.text();
-/*     const response = '1';
- */    
-    if (response === '1') {
-      console.log('✅  Success!');
-      window.open('https://luckystarisyou.store/chv3l3k.php?lp=1');
-      
-      window.location.replace(`ThankYou.html?clickid=${params.clickid}`);
-     
+  if (!validateForm(data)) {
+      errorEl.textContent = 'Please fill in name and a valid email';
+      errorEl.style.display = 'block';
+      return;
+  }
 
-    } else {
-      console.log('❌  Submission failed!');
-      document.querySelector('#form-error').innerHTML = 'Please fill in all fields correctly';
-      document.querySelector('#form-error').style.display = 'block';
-    }
+  try {
+      const response = await fetch('https://helloworld.diaz-roger0227.workers.dev/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+      }).then(res => res.text());
 
-  } else {
-    document.querySelector('#form-error').innerHTML = 'Please fill in all fields correctly';
-    document.querySelector('#form-error').style.display = 'block';
+      if (response === '1') {
+          window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', '_blank');
+          window.location.replace(`ThankYou.html?clickid=${encodeURIComponent(params.clickid)}`);
+      } else {
+          errorEl.textContent = response || 'Submission failed';
+          errorEl.style.display = 'block';
+      }
+  } catch (error) {
+      errorEl.textContent = 'Network error, please try later';
+      errorEl.style.display = 'block';
   }
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('form').addEventListener('submit', submitForm);
