@@ -12,26 +12,37 @@ console.log('URL params:', params);
 
 function validateForm(data) {
   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  console.log('Validating email:', data.email); // 打印 email 地址
   if (!data.email || !validEmail.test(data.email)) {
+      console.log('Email validation failed');
       return false;
   }
+  console.log('Email validation passed');
   return true;
 }
 
 async function submitForm(event) {
-  event.preventDefault();
+  event.preventDefault(); // 防止表单默认提交
   const errorEl = document.querySelector('#form-error');
   errorEl.textContent = '';
   errorEl.style.display = 'none';
 
-  const data = Object.fromEntries(new FormData(event.target).entries());
-  data.list = params.list; // 关键：添加 Sendy list ID
-  console.log('Submitting data:', data);
+  // 获取表单数据
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData.entries());
+  
+  console.log('Form data:', data);  // 添加日志，检查数据
+  data.list = params.list; // 添加 Sendy list ID
 
-  if (!validateForm(data)) {
-      errorEl.textContent = 'Please fill in name and a valid email';
-      errorEl.style.display = 'block';
-      return;
+  function validateForm(data) {
+    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    console.log('Validating email:', data.email);  // 输出验证的 email
+    if (!data.email || !validEmail.test(data.email)) {
+        console.log('Email validation failed:', data.email);  // 如果验证失败，打印错误
+        return false;
+    }
+    console.log('Email validation passed:', data.email);  // 如果验证通过，打印成功
+    return true;
   }
 
   try {
@@ -41,20 +52,21 @@ async function submitForm(event) {
           body: JSON.stringify(data),
       }).then(res => res.text());
 
+      console.log('Server response:', response);  // 输出服务器响应
+
       if (response === '1') {
-        window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', '_blank');
-        // open 会被某些浏览器拦截，建议用 location.href 代替（除非你有特定需求）
         window.location.href = `thankyou.html?clickid=${encodeURIComponent(params.clickid)}`;
-        
       } else {
           errorEl.textContent = response || 'Submission failed';
           errorEl.style.display = 'block';
       }
   } catch (error) {
+      console.error('Network error:', error);
       errorEl.textContent = 'Network error, please try later';
       errorEl.style.display = 'block';
   }
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('form').addEventListener('submit', submitForm);

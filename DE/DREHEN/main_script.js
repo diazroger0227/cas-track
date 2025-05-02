@@ -36,7 +36,3 @@ $(document).ready(function () {
   });
 });
 
-function openOfferPage() {
-  // 打开新的页面，URL可以替换为你的offer页面地址
-  window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', '_blank');
-}

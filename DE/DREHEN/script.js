@@ -11,7 +11,7 @@ const parseParams = (querystring) => {
   }
   return obj;
 };
-console.log('Query string:', window.location.search);
+
 const params = parseParams(window.location.search);
 console.log('URL query params:', params);
 
@@ -32,7 +32,7 @@ function validateForm(data) {
 
 async function submitForm(event) {
    
-  const clickid = params.visitor_id;
+  
   
   event.preventDefault();
   document.querySelector('#form-error').innerHTML = '';
@@ -50,13 +50,13 @@ async function submitForm(event) {
       body: JSON.stringify(data),
     });
     const response = await request.text();
-
+    console.log(response);
     
     if (response === '1') {
       console.log('✅  Success!');
-      window.open('https://luckystarisyou.store/chv3l3k.php?lp=1');
+      window.open('google.com');
       
-      window.location.replace(`ThankYou.html?clickid=${clickid}`);
+      window.location.replace(`ThankYou.html?clickid=${params.clickid}`);
      
 
     } else {
