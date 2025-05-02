@@ -34,15 +34,11 @@ async function submitForm(event) {
   console.log('Form data:', data);  // 添加日志，检查数据
   data.list = params.list; // 添加 Sendy list ID
 
-  function validateForm(data) {
-    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    console.log('Validating email:', data.email);  // 输出验证的 email
-    if (!data.email || !validEmail.test(data.email)) {
-        console.log('Email validation failed:', data.email);  // 如果验证失败，打印错误
-        return false;
-    }
-    console.log('Email validation passed:', data.email);  // 如果验证通过，打印成功
-    return true;
+  // 调用 validateForm 检查 email 是否有效
+  if (!validateForm(data)) {
+      errorEl.textContent = 'Please fill in a valid email';  // 错误提示
+      errorEl.style.display = 'block';
+      return;
   }
 
   try {
@@ -66,7 +62,6 @@ async function submitForm(event) {
       errorEl.style.display = 'block';
   }
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('form').addEventListener('submit', submitForm);
