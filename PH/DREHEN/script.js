@@ -12,7 +12,7 @@ console.log('URL params:', params);
 
 function validateForm(data) {
   const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!data.name || !data.email || !validEmail.test(data.email)) {
+  if (!data.email || !validEmail.test(data.email)) {
       return false;
   }
   return true;
