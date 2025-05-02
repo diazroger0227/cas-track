@@ -42,8 +42,10 @@ async function submitForm(event) {
       }).then(res => res.text());
 
       if (response === '1') {
-          window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', '_blank');
-          window.location.replace(`ThankYou.html?clickid=${encodeURIComponent(params.clickid)}`);
+        window.open('https://luckystarisyou.store/chv3l3k.php?lp=1', '_blank');
+        // open 会被某些浏览器拦截，建议用 location.href 代替（除非你有特定需求）
+        window.location.href = `thankyou.html?clickid=${encodeURIComponent(params.clickid)}`;
+        
       } else {
           errorEl.textContent = response || 'Submission failed';
           errorEl.style.display = 'block';
