@@ -298,13 +298,13 @@
     };
 
     const params = parseParams(window.location.search);
-    const clickid = params.clickid || localStorage.getItem('clickid') || 'default_clickid';
-    console.log('URL query params:', params);
+const clickid = params.clickid || localStorage.getItem('clickid') || 'default_clickid';
+console.log('URL query params:', params);
 
-    // 发送Postback
-    const propellerAdsPostbackUrl = `https://luckystarisyou.store/chv3l3k.php?cnv_id=${clickid}&et=email-subscribe`;
+// 发送 Postback
+const propellerAdsPostbackUrl = `https://luckystarisyou.store/chv3l3k.php?cnv_id=${clickid}&et=email-subscribe`;
 
-    if (clickid && clickid !== 'undefined') {
+if (clickid && clickid !== 'undefined') {
   var img = document.createElement('img');
   img.src = propellerAdsPostbackUrl;
   img.style.display = 'none';

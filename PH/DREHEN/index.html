@@ -29,16 +29,15 @@
 		};
 		document.head.appendChild(s);
 	</script>
-	<script>
-		// 从 URL 中解析 clickid 参数
-		const urlParams = new URLSearchParams(window.location.search);
-		const clickid = urlParams.get('clickid') || 'default_clickid'; // 如果没有 clickid，则使用默认值
-	  
-		// 将 clickid 存储到全局变量或本地存储中（可选）
-		console.log('Click ID:', clickid);
-	  
-		// 如果需要将 clickid 传递到后续页面，可以在这里动态修改链接或表单
-	  </script>
+<script>
+	// 从 URL 中解析参数
+	const urlParams = new URLSearchParams(window.location.search);
+	const clickid = urlParams.get('clickid') || urlParams.get('uclick') || 'default_clickid'; // 优先使用 clickid 或 uclick
+  
+	// 将 clickid 存储到 localStorage，以便后续页面使用
+	localStorage.setItem('clickid', clickid);
+	console.log('Click ID:', clickid);
+  </script>
 </head>
 
 <body>
