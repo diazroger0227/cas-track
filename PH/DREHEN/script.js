@@ -55,7 +55,7 @@ async function submitForm(event) {
 
     if (response.ok) {
       console.log('Redirecting to thank you page');
-      window.location.replace(`thankyou.html?clickid=${encodeURIComponent(params.clickid)}`);
+      window.location.replace(`thankyou.html?subid=${encodeURIComponent(params.subid)}`);
     } else {
       console.error('Submission failed:', response.statusText);
       errorEl.textContent = `Submission failed: ${response.statusText}`;

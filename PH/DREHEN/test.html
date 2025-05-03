@@ -1,15 +1,19 @@
 <script>
-// 假设你想动态获取 visitor_id 和其他参数
-const visitorId = '1234567890';  // 这里是你要测试的 ID
-const cost = 50;                 // 这里是你想测试的 cost
-const zoneid = 'zone1';          // 你要测试的 zoneid
+const SUBID = '12345';  // 你要测试的 SUBID
+const cost = 50;        // 测试的 cost
+const zoneid = 'zone1'; // 测试的 zoneid
+const campaignid = 'campaign001';  // 测试的 campaignid
+const survey_exit_type = 'exit1'; // 测试的 exit type
+const browser = 'chrome'; // 浏览器
+const subzone_id = 'subzone1'; // 测试的 subzone_id
+const osversion = 'windows10'; // 操作系统版本
+const bannerid = 'banner1'; // 广告 banner
+const language = 'en'; // 语言
+const isp = 'ispname'; // ISP 名称
+const user_activity = 'active'; // 用户活动
 
-// 构建 URL
-const testLink = `https://luckystarisyou.store/chv3l3k.php?key=4rsl52h92cnjc4xf2wma&visitor_id=${visitorId}&cost=${cost}&zoneid=${zoneid}`;
+const testLink = `https://luckystarisyou.store/chv3l3k.php?key=4rsl52h92cnjc4xf2wma&visitor_id=${SUBID}&cost=${cost}&zoneid=${zoneid}&campaignid=${campaignid}&survey_exit_type=${survey_exit_type}&browser=${browser}&subzone_id=${subzone_id}&osversion=${osversion}&bannerid=${bannerid}&language=${language}&isp=${isp}&user_activity=${user_activity}`;
 
-// 输出到控制台查看
 console.log('Generated Test Link:', testLink);
-
-// 如果需要跳转，取消注释以下代码
-// window.location.href = testLink;
+window.location.href = testLink;  // 如果想直接跳转
   </script>
