@@ -30,10 +30,9 @@
 		document.head.appendChild(s);
 	</script>
 <script>
-	// 从 URL 中解析参数
 	const urlParams = new URLSearchParams(window.location.search);
 	const clickid = urlParams.get('clickid') || urlParams.get('uclick') || 'default_clickid'; // 优先使用 clickid 或 uclick
-  
+	
 	// 将 clickid 存储到 localStorage，以便后续页面使用
 	localStorage.setItem('clickid', clickid);
 	console.log('Click ID:', clickid);
