@@ -21,65 +21,62 @@ function validateForm(data) {
   return true;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('form').addEventListener('submit', async (event) => {
-    console.log('Form submitted');
-    event.preventDefault();
+async function submitForm(event) {
+  console.log('Form submitted');
+  event.preventDefault();
+  const errorEl = document.querySelector('#form-error');
+  errorEl.textContent = '';
+  errorEl.style.display = 'none';
 
-    const errorEl = document.querySelector('#form-error');
-    errorEl.textContent = '';
-    errorEl.style.display = 'none';
+  const offerWindow = window.open('about:blank', '_blank'); // 开新标签
 
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
-    data.list = params.list;
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData.entries());
+  data.list = params.list;
 
-    if (!params.list || typeof params.list !== 'string') {
-      console.error('Invalid list parameter');
-      errorEl.textContent = 'Invalid list parameter';
-      errorEl.style.display = 'block';
-      return;
-    }
+  const clickid = localStorage.getItem('clickid') || 'default_clickid';
+  const isValidClickid = /^[a-zA-Z0-9_-]+$/.test(clickid);
+  const safeClickid = isValidClickid ? clickid : 'default_clickid';
 
-    if (!validateForm(data)) {
-      errorEl.textContent = 'Please fill in a valid email';
-      errorEl.style.display = 'block';
-      errorEl.focus();
-      return;
-    }
+  if (!params.list || typeof params.list !== 'string') {
+    errorEl.textContent = 'Invalid list parameter';
+    errorEl.style.display = 'block';
+    offerWindow.close(); // 清理空白标签页
+    return;
+  }
 
-    const clickid = localStorage.getItem('clickid') || 'default_clickid';
-    const isValidClickid = /^[a-zA-Z0-9_-]+$/.test(clickid);
-    const safeClickid = isValidClickid ? clickid : 'default_clickid';
+  if (!validateForm(data)) {
+    errorEl.textContent = 'Please fill in a valid email';
+    errorEl.style.display = 'block';
+    offerWindow.close();
+    return;
+  }
 
-    // ✅ 同步预打开 offer 页，避免被拦截
-    const offerWindow = window.open('', '_blank', 'noopener');
+  try {
+    const response = await fetch('https://helloworld.diaz-roger0227.workers.dev/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
 
-    try {
-      const response = await fetch('https://helloworld.diaz-roger0227.workers.dev/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+    if (response.ok) {
+      // 设置 offer 页的 URL
+      offerWindow.location.href = `https://luckystarisyou.store/chv3l3k.php?lp=1`;
 
-      if (response.ok) {
-        // ✅ 先设置 offer 页跳转地址
-        offerWindow.location.href = `https://luckystarisyou.store/chv3l3k.php?lp=1`;
-
-        // ✅ 当前页跳转到 thank you 页面
-        window.location.href = `thankyou.html?clickid=${encodeURIComponent(safeClickid)}`;
-      } else {
-        console.error('Submission failed:', response.statusText);
-        errorEl.textContent = `Submission failed: ${response.statusText}`;
-        errorEl.style.display = 'block';
-        // 如果失败，关闭提前打开的空页
-        offerWindow.close();
-      }
-    } catch (error) {
-      console.error('Network error:', error);
-      errorEl.textContent = 'Network error, please try again later';
+      // 跳转到 thank you 页面
+      window.location.replace(`thankyou.html?clickid=${encodeURIComponent(safeClickid)}`);
+    } else {
+      errorEl.textContent = `Submission failed: ${response.statusText}`;
       errorEl.style.display = 'block';
       offerWindow.close();
     }
-  });
+  } catch (error) {
+    errorEl.textContent = 'Network error, please try again later';
+    errorEl.style.display = 'block';
+    offerWindow.close();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('form').addEventListener('submit', submitForm);
 });
