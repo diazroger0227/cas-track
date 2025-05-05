@@ -16,7 +16,7 @@
 					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-M7TDH3PQ');
 	</script>
-	<!-- <script>
+	<script>
 		var s = document.createElement('script');
 		s.src = '//deehalig.net/act/files/micro.tag.min.js?z=5705526' + '&sw=/sw-check-permissions-9098f.js';
 		s.onload = function (result) {
@@ -29,11 +29,15 @@
 			}
 		};
 		document.head.appendChild(s);
-	</script> -->
+	</script>
+<script>
+	const urlParams = new URLSearchParams(window.location.search);
+	const clickid = urlParams.get('clickid') || urlParams.get('uclick') || 'default_clickid'; // 优先使用 clickid 或 uclick
 	
-	
-
-
+	// 将 clickid 存储到 localStorage，以便后续页面使用
+	localStorage.setItem('clickid', clickid);
+	console.log('Click ID:', clickid);
+  </script>
 </head>
 
 <body>
@@ -157,12 +161,9 @@
 			<div id="form-section">
 
 				<form id="form">
-					<label for="email" class="form-label"> </label><br /><br />
+					<label for="email" class="form-label"> </label><br />
 					<input type="email" name="email" id="email" required placeholder="Enter E-Mail-Adresse" /><br />
-					<div id="form-error" style="display: none">Your email address is invalid.</div>
-					<!-- Honeypot-->
-					
-										
+					<div id="form-error" style="display: none; color: red;">Your email address is invalid.</div>
 					<input type="submit" name="submit" id="submit" value="Jetzt abonnieren" />
 				</form>
 			</div>

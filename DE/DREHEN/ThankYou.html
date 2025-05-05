@@ -83,7 +83,7 @@
     
    
     <script type='text/javascript' id='vwoCode'>
-      window._vwo_code || (function() {
+      window._vwo_code || (function () {
         var account_id = 1067412,
           version = 2.1,
           settings_tolerance = 2000,
@@ -98,43 +98,43 @@
         try {
           var c = JSON.parse(localStorage.getItem('_vwo_' + account_id + '_config'));
           cc = c && typeof c === 'object' ? c : {}
-        } catch (e) {}
+        } catch (e) { }
         var stT = cc.stT === 'session' ? w.sessionStorage : w.localStorage;
         code = {
           nonce: v && v.nonce,
-          use_existing_jquery: function() {
+          use_existing_jquery: function () {
             return typeof use_existing_jquery !== 'undefined' ? use_existing_jquery : undefined
           },
-          library_tolerance: function() {
+          library_tolerance: function () {
             return typeof library_tolerance !== 'undefined' ? library_tolerance : undefined
           },
-          settings_tolerance: function() {
+          settings_tolerance: function () {
             return cc.sT || settings_tolerance
           },
-          hide_element_style: function() {
+          hide_element_style: function () {
             return '{' + (cc.hES || hide_element_style) + '}'
           },
-          hide_element: function() {
+          hide_element: function () {
             if (performance.getEntriesByName('first-contentful-paint')[0]) {
               return ''
             }
             return typeof cc.hE === 'string' ? cc.hE : hide_element
           },
-          getVersion: function() {
+          getVersion: function () {
             return version
           },
-          finish: function(e) {
+          finish: function (e) {
             if (!f) {
               f = true;
               var t = d.getElementById('_vis_opt_path_hides');
               if (t) t.parentNode.removeChild(t);
-              if (e)(new Image).src = 'https://dev.visualwebsiteoptimizer.com/ee.gif?a=' + account_id + e
+              if (e) (new Image).src = 'https://dev.visualwebsiteoptimizer.com/ee.gif?a=' + account_id + e
             }
           },
-          finished: function() {
+          finished: function () {
             return f
           },
-          addScript: function(e) {
+          addScript: function (e) {
             var t = d.createElement('script');
             t.type = 'text/javascript';
             if (e.src) {
@@ -145,7 +145,7 @@
             v && t.setAttribute('nonce', v.nonce);
             d.getElementsByTagName('head')[0].appendChild(t);
           },
-          load: function(e, t) {
+          load: function (e, t) {
             var n = this.getSettings(),
               i = d.createElement('script'),
               r = this;
@@ -162,7 +162,7 @@
               o.open('GET', e, true);
               o.withCredentials = !t.dSC;
               o.responseType = t.responseType || 'text';
-              o.onload = function() {
+              o.onload = function () {
                 if (t.onloadCb) {
                   return t.onloadCb(o, e)
                 }
@@ -172,7 +172,7 @@
                   _vwo_code.finish('&e=loading_failure:' + e)
                 }
               };
-              o.onerror = function() {
+              o.onerror = function () {
                 if (t.onerrorCb) {
                   return t.onerrorCb(e)
                 }
@@ -181,7 +181,7 @@
               o.send()
             }
           },
-          getSettings: function() {
+          getSettings: function () {
             try {
               var e = stT.getItem(cK);
               if (!e) {
@@ -197,10 +197,10 @@
               return
             }
           },
-          init: function() {
+          init: function () {
             if (d.URL.indexOf('__vwo_disable__') > -1) return;
             var e = this.settings_tolerance();
-            w._vwo_settings_timer = setTimeout(function() {
+            w._vwo_settings_timer = setTimeout(function () {
               _vwo_code.finish();
               stT.removeItem(cK)
             }, e);
@@ -276,19 +276,26 @@
         }
         return obj;
       };
-    
+  
       const params = parseParams(window.location.search);
-      console.log('URL query params:', params);
-    
-      // 发送Postback
-      const propellerAdsPostbackUrl = `https://luckystarisyou.store/chv3l3k.php?cnv_id=${params.clickid}&et=email-subscribe`;
-    
-      var img = document.createElement('img');
-      img.src = propellerAdsPostbackUrl;
-      img.style.display = 'none';
-      document.body.appendChild(img);
-      console.log(`✅ Postback sent to ${img.src}`);
-    
+  const clickid = params.clickid || localStorage.getItem('clickid') || 'default_clickid';
+  console.log('URL query params:', params);
+  
+  // 发送 Postback
+  const propellerAdsPostbackUrl = `https://luckystarisyou.store/chv3l3k.php?cnv_id=${clickid}&et=email-subscribe`;
+  
+  if (clickid && clickid !== 'undefined') {
+    var img = document.createElement('img');
+    img.src = propellerAdsPostbackUrl;
+    img.style.display = 'none';
+    document.body.appendChild(img);
+    console.log(`✅ Postback sent to ${img.src}`);
+  } else {
+    console.error('❌ Missing or invalid clickid');
+  }
+  
+  
+  
       // Offer按钮跳转
       // document.getElementById('offer-button').addEventListener('click', function() {
       //   window.location.replace(`https://luckystarisyou.store/chv3l3k.php?lp=1`);
