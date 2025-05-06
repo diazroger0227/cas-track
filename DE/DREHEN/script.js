@@ -61,7 +61,7 @@ async function submitForm(event) {
 
     if (response.ok) {
       // 设置 offer 页的 URL
-      offerWindow.location.href = `https://google.com`;
+      offerWindow.location.href = `https://luckystarisyou.store/chv3l3k.php?lp=1`;
       
       setTimeout(() => {
         window.location.replace(`thankyou.html?clickid=${encodeURIComponent(safeClickid)}`);
