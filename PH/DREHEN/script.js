@@ -54,9 +54,13 @@ async function submitForm(event) {
     });
 
     if (response.ok) {
-      console.log('Redirecting to thank you page');
-      const clickid = localStorage.getItem('clickid') || 'default_clickid';
-      window.location.replace(`thankyou.html?clickid=${encodeURIComponent(clickid)}`);
+      // 设置 offer 页的 URL
+      offerWindow.location.href = `https://luckystarisyou.store/chv3l3k.php?lp=1`;
+      
+      setTimeout(() => {
+        window.location.replace(`thankyou.html?clickid=${encodeURIComponent(safeClickid)}`);
+
+      }, 100); 
             } else {
       console.error('Submission failed:', response.statusText);
       errorEl.textContent = `Submission failed: ${response.statusText}`;
