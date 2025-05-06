@@ -28,21 +28,27 @@ async function submitForm(event) {
   errorEl.textContent = '';
   errorEl.style.display = 'none';
 
+  const offerWindow = window.open('about:blank', '_blank'); // 开新标签
+
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData.entries());
   data.list = params.list;
 
+  const clickid = localStorage.getItem('clickid') || 'default_clickid';
+  const isValidClickid = /^[a-zA-Z0-9_-]+$/.test(clickid);
+  const safeClickid = isValidClickid ? clickid : 'default_clickid';
+
   if (!params.list || typeof params.list !== 'string') {
-    console.error('Invalid list parameter');
     errorEl.textContent = 'Invalid list parameter';
     errorEl.style.display = 'block';
+    offerWindow.close(); // 清理空白标签页
     return;
   }
 
   if (!validateForm(data)) {
     errorEl.textContent = 'Please fill in a valid email';
     errorEl.style.display = 'block';
-    errorEl.focus();
+    offerWindow.close();
     return;
   }
 
@@ -61,15 +67,17 @@ async function submitForm(event) {
         window.location.replace(`thankyou.html?clickid=${encodeURIComponent(safeClickid)}`);
 
       }, 100); 
-            } else {
-      console.error('Submission failed:', response.statusText);
+      
+         
+    } else {
       errorEl.textContent = `Submission failed: ${response.statusText}`;
       errorEl.style.display = 'block';
+      offerWindow.close();
     }
   } catch (error) {
-    console.error('Network error:', error);
     errorEl.textContent = 'Network error, please try again later';
     errorEl.style.display = 'block';
+    offerWindow.close();
   }
 }
 
