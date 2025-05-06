@@ -61,10 +61,14 @@ async function submitForm(event) {
 
     if (response.ok) {
       // 设置 offer 页的 URL
-      offerWindow.location.href = `https://luckystarisyou.store/chv3l3k.php?lp=1`;
+      offerWindow.location.href = `https://google.com`;
+      
+      setTimeout(() => {
+        window.location.replace(`thankyou.html?clickid=${encodeURIComponent(safeClickid)}`);
 
-      // 跳转到 thank you 页面
-      window.location.replace(`thankyou.html?clickid=${encodeURIComponent(safeClickid)}`);
+      }, 100); 
+      
+         
     } else {
       errorEl.textContent = `Submission failed: ${response.statusText}`;
       errorEl.style.display = 'block';
