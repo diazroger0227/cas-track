@@ -197,8 +197,8 @@
   </header>
   <div class="container py-5">
     <div class="text-center mb-4">
-      <h1 class="display-4">Get Up to 450% Bonus – PH Players Only</h1>
-      <p class="text-muted fs-5">Start with ₱560 – Real Prizes, Real Wins, Fast Cashouts</p>
+      <h1 class="display-4">🔥 This Month’s Top Casino Deals – PH Players Only</h1>
+      <p class="text-muted fs-5">Start with ₱560 – Real Prizes, Fast Cashouts, Exclusive Offers</p>
     </div>
     <div class="alert alert-warning text-center" role="alert" style="font-size: 0.95rem; max-width: 720px; margin: 0 auto 24px;">
       🎯 <strong>Active Player Perk:</strong> Join our PH VIP group for secret bonuses & exclusive tips – only for registered users.<br>
@@ -426,5 +426,22 @@
 <a href="https://your-group-link.com" target="_blank" class="floating-vip-button d-md-none">
     🎯 Join PH VIP – Boost Your Rewards
   </a>
+</script>
+  <script>
+  function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name) || '';
+  }
+
+  const emailadd = getQueryParam('emailadd');
+  const emailcontent = getQueryParam('emailcontent');
+  const external_id = getQueryParam('external_id');
+
+  document.querySelectorAll('.custom-play-button').forEach(button => {
+    const baseUrl = button.getAttribute('href').split('?')[0];
+    const newUrl = `${baseUrl}?sub1=${encodeURIComponent(emailadd)}&sub2=${encodeURIComponent(emailcontent)}&sub3=${encodeURIComponent(external_id)}`;
+    button.setAttribute('href', newUrl);
+  });
+  </script>
 </body>
 </html>
